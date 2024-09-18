@@ -10,7 +10,7 @@ export default function HeroImageCard({ imgUrl }: { imgUrl: string }) {
   const [maxScrollY, setMaxScrollY] = useState(Infinity);
   const [dynamicStyles, setDyanamicStyles] = useState({
     scale: 1,
-    filter: 0,
+    // filter: 0,
   });
 
   const { scrollY } = useScroll({
@@ -25,7 +25,7 @@ export default function HeroImageCard({ imgUrl }: { imgUrl: string }) {
 
     setDyanamicStyles({
       scale: animationValue,
-      filter: (1 - animationValue) * 100,
+      // filter: (1 - animationValue) * 100,
     });
   });
 
@@ -50,7 +50,7 @@ export default function HeroImageCard({ imgUrl }: { imgUrl: string }) {
         top: `${vertMargin}vh`,
         height: `${90 - 2 * vertMargin}vh`,
         scale: dynamicStyles.scale,
-        filter: `blur(${dynamicStyles.filter}px)`,
+        // filter: `blur(${dynamicStyles.filter}px)`,
       }}>
       <img src={imgUrl} alt={imgUrl} className="object-cover h-full w-full" />
     </motion.div>

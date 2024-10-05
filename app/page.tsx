@@ -1,4 +1,4 @@
-import { Footer, Hero, Project, Services, Testimonial } from "./sections";
+import { Hero, Project, Services, Testimonial } from "./sections";
 
 export default function Home() {
   return (
@@ -7,7 +7,6 @@ export default function Home() {
       <Project />
       <Services />
       <Testimonial />
-      <Footer />
     </>
   );
 }

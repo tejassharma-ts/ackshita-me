@@ -1,8 +1,10 @@
 "use client";
 
+import { useState } from "react";
 import useCheckActiveNav from "@/hooks/use-check-active-link";
 import { Sheet, SheetContent, SheetFooter, SheetTrigger } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 import { Icons } from "./icons";
 
 const links = [
@@ -25,22 +27,25 @@ const links = [
 ];
 
 export default function Menu() {
+  const [isOpen, setIsOpen] = useState(false);
   const { checkActiveNav } = useCheckActiveNav();
   return (
-    <Sheet>
+    <Sheet open={isOpen} onOpenChange={setIsOpen}>
       <SheetTrigger className="font-medium">MENU</SheetTrigger>
       <SheetContent className="flex items-center justify-center flex-col bg-black">
         <ul className="flex flex-col items-center space-y-6 my-auto">
           {links.map((link) => (
             <li
               key={link.title}
+              onClick={() => setIsOpen(false)}
               className={cn(
-                "uppercase text-5xl font-extrabold cursor-pointer text-muted-foreground hover:text-white transition-colors",
+                "uppercase text-5xl font-extrabold cursor-pointer text-muted-foreground hover:text-white transition-colors relative",
                 {
                   "text-white": checkActiveNav(link.href),
                 },
               )}>
               {link.title}
+              <Link href={link.href} className="absolute inset-0" />
             </li>
           ))}
         </ul>

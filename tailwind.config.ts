@@ -11,6 +11,7 @@ const config: Config = {
     extend: {
       fontFamily: {
         main: ["Six Caps"],
+        // main: ["dx"],
       },
       colors: {
         background: "hsl(var(--background))",

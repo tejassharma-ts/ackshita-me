@@ -3,12 +3,20 @@ import localFont from "next/font/local";
 import LenisProvider from "./providers/smooth-scroll";
 import "./globals.css";
 import Navbar from "./components/navbar";
+import { Footer } from "./sections";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
   weight: "100 900",
 });
+
+// const dx = localFont({
+//   src: "./fonts/DxSlight.otf",
+//   variable: "--font-dx",
+//   weight: "100 900",
+// });
+
 const geistMono = localFont({
   src: "./fonts/GeistMonoVF.woff",
   variable: "--font-geist-mono",
@@ -32,6 +40,7 @@ export default function RootLayout({
       <body>
         <Navbar />
         <LenisProvider>{children}</LenisProvider>
+        <Footer />
       </body>
     </html>
   );

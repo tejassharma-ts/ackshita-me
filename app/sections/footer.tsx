@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
+import { cn } from "@/lib/utils";
 import Container from "../components/container";
 import { Icons } from "../components/icons";
 import Logo from "../components/logo";
@@ -22,9 +23,9 @@ const socialLinks = [
     href: "#",
   },
 ];
-export default function Footer() {
+export default function Footer({ className }: { className?: string }) {
   return (
-    <footer className="mt-44 pb-10">
+    <footer className={cn("mt-44 pb-10", className)}>
       <div className="flex flex-col items-center  space-y-6">
         <p className="uppercase text-center font-medium">( need an unfair advantage? )</p>
         <h1 className="text-[10rem] font-dx text-center uppercase">

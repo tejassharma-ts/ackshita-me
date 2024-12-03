@@ -7,6 +7,7 @@ import {
 import Image from "next/image";
 import Container from "../components/container";
 import Section from "../components/section";
+import { Footer } from "../sections";
 
 export default function AboutPage() {
   const brandUnderstandingSteps = [
@@ -125,14 +126,14 @@ export default function AboutPage() {
         <Container>
           <div className="flex gap-8">
             <div className="relative">
-              <h1 className="text-[15rem] font-main leading-[1] whitespace-nowrap">
+              <h1 className="text-[10rem] font-dx whitespace-nowrap">
                 YOUR FAVOURITE <br />
                 BRAND DESIGNER
               </h1>
               <p className="mt-8 max-w-md">
-                <span className="text-gray-400">I AM A </span> BRAND STRATEGIST{" "}
-                <span className="text-gray-400">WHO</span> LEVERAGES HUMAN INSIGHTS.{" "}
-                <span className="text-gray-400">TO HELP</span> BRANDS FIND THEIR TRIBE.
+                <span className="text-muted-foreground">I AM A </span> BRAND STRATEGIST{" "}
+                <span className="text-muted-foreground">WHO</span> LEVERAGES HUMAN INSIGHTS.{" "}
+                <span className="text-muted-foreground">TO HELP</span> BRANDS FIND THEIR TRIBE.
               </p>
               <Image
                 className="absolute bottom-0 right-0 translate-x-1/2 translate-y-1/2 grayscale hover:grayscale-0 duration-500"
@@ -155,12 +156,12 @@ export default function AboutPage() {
           <div className="flex justify-between items-center">
             <div className="flex flex-col">
               <div className="flex flex-col">
-                <h1 className="text-[20rem] font-main">My story</h1>
-                <h3 className="text-3xl -mt-10">A BIT ABOUT ME</h3>
+                <h1 className="text-[10rem] font-dx">My story</h1>
+                <h3 className="text-2xl mt-4 font-medium">A BIT ABOUT ME</h3>
               </div>
               <div className="border-l pl-4 mt-14">
                 <div className="flex flex-col max-w-xl gap-14">
-                  <div className="relative flex flex-col space-y-4 before:absolute before:h-full before:bg-white before:w-1 before:-left-4 before:-translate-x-1/2 before:rounded-full">
+                  <div className="relative flex flex-col space-y-4 before:absolute before:h-full before:bg-white before:w-1 before:-left-4 before:-translate-x-1/2 before:rounded-full font-medium">
                     <h1 className="text-4xl font-semibold">My Mission.</h1>
                     <p>
                       Challenge convention and spark meaningful change by creatively solving
@@ -169,7 +170,7 @@ export default function AboutPage() {
                       inspire action, connection, and loyalty.
                     </p>
                   </div>
-                  <div className="relative flex flex-col space-y-4 before:absolute before:h-full before:bg-white before:w-1 before:-left-4 before:-translate-x-1/2 before:rounded-full">
+                  <div className="relative flex flex-col space-y-4 before:absolute before:h-full before:bg-white before:w-1 before:-left-4 before:-translate-x-1/2 before:rounded-full font-medium">
                     <h1 className="text-4xl font-semibold">My Approach.</h1>
                     <p>
                       With a brazen, cheerful, and steadfast approach, I work closely with my
@@ -197,12 +198,12 @@ export default function AboutPage() {
       <Section>
         <Container>
           <div className="flex flex-col items-center">
-            <p className="max-w-xl text-center mb-4">
+            <p className="max-w-xl text-center mb-4 font-medium">
               A GREAT BRAND IDENTIFIES AND CULTIVATES A LOYAL TRIBE OF PEOPLE BASED ON A CONNECTION
               LARGER THAN THE PRODUCT BE IT THEIR VALUES OR PHILOSOPHY. HERE'S A BREAKDOWN OF THE
               KEY STEPS I FOLLOW TO CREATE SUCH A BRAND.
             </p>
-            <h1 className="text-[15rem] font-main leading-[1] whitespace-nowrap">APPROACH</h1>
+            <h1 className="text-[10rem] mt-4 font-dx whitespace-nowrap">APPROACH</h1>
 
             <Accordion type="single" collapsible className="w-full mt-8">
               <AccordionItem value="item-1" className="border-white/50">
@@ -254,6 +255,7 @@ export default function AboutPage() {
           </div>
         </Container>
       </Section>
+      <Footer className="mt-0" />
     </>
   );
 }

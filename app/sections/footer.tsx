@@ -24,10 +24,10 @@ const socialLinks = [
 ];
 export default function Footer() {
   return (
-    <footer className="py-10">
-      <div className="leading-[0.9] flex flex-col items-center">
-        <p className="text-muted-foreground">( need an unfair advantage? )</p>
-        <h1 className="text-[15rem] font-main text-center">
+    <footer className="mt-44 pb-10">
+      <div className="flex flex-col items-center  space-y-6">
+        <p className="uppercase text-center font-medium">( need an unfair advantage? )</p>
+        <h1 className="text-[10rem] font-dx text-center uppercase">
           Let&apos;s make it <br />
           happen
         </h1>
@@ -35,19 +35,21 @@ export default function Footer() {
           connect with me
         </Button>
       </div>
-      <div className="mt-8 flex flex-col space-y-4 text-sm">
+      <div className="mt-8 flex flex-col text-base">
         <Container className="flex justify-between w-full" size="full">
-          <p className="uppercase text-muted-foreground">based in india - working worldwide</p>
-          <p className="uppercase text-muted-foreground">
-            local time <span className="text-white">34: 30</span>
+          <p className="uppercase text-muted-foreground font-medium">
+            based in india - working worldwide
+          </p>
+          <p className="uppercase text-muted-foreground font-medium">
+            local time <span className="text-white  font-semibold">34: 30</span>
           </p>
         </Container>
-        <Separator />
-        <Container className="flex justify-between w-full" size="full">
+        <Separator className="mt-6 mb-12" />
+        <Container className="flex justify-between w-full items-center" size="full">
           <div className="w-1/3">
             <Logo />
           </div>
-          <ul className="flex space-x-4 w-1/3 justify-center">
+          <ul className="flex space-x-12 w-full justify-center text-white font-medium">
             {socialLinks.map((link) => (
               <li key={link.title} className="relative">
                 {link.title}
@@ -55,9 +57,17 @@ export default function Footer() {
               </li>
             ))}
           </ul>
-          <div className="flex items-center space-x-1 w-1/3 justify-end">
-            <Icons.copyright size={10} />
-            <span className="uppercase">2024 Priyanka</span>
+          <div className="flex items-center space-x-1 w-1/3 justify-end text-muted-foreground font-medium ">
+            <div className="flex flex-col">
+              <div className="uppercase flex items-center space-x-2 justify-end">
+                <Icons.copyright size={14} />
+                <span>2024 Ackshita</span>
+              </div>
+              <span className="uppercase">
+                Made with︎ <Icons.love size={18} className="fill-white inline-block stroke-none" />{" "}
+                by DAK Designs
+              </span>
+            </div>
           </div>
         </Container>
       </div>

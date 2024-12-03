@@ -6,6 +6,20 @@ import Container from "../components/container";
 import Section from "../components/section";
 import Footer from "./footer";
 
+const testimonials = [
+  {
+    name: "Anirudh Ravichandran",
+    title: "Founder of Arise Performance and Real Fuel",
+    content:
+      "She has been an absolute game-changer for us. Her professionalism, ideas, and commitment to our growth is motivating for me and my team as well. We doubled and tripled our followers on social media in just a few months with her organic and original ideas. Since we connect on the same wavelength, working with her is very easy and exciting. We have just begun, and it's exciting times ahead. I cannot recommend her more to any company or individual looking to actually put themselves out there!",
+  },
+  {
+    name: "Sangaamithra P.S Chadha",
+    title: "Executive Director, Sai Kirupa Special School",
+    content:
+      "Working with Ackshita on our snack brand and café branding has been extraordinary. From day one, she immersed herself in our vision, crafting a cohesive brand identity. Her creativity shone with our logo design—it captured our essence perfectly and was loved by the entire team, no revisions needed! Her dedication, talent, and passion have truly elevated our brand, and we’re thrilled with the outcome. If you’re looking for a designer who brings brands to life with creativity and heart, she’s the one. A heartfelt thank you from all of us at Sai Kirupa for her commitment and care.",
+  },
+];
 export default function Testimonial() {
   const targetRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
@@ -19,20 +33,19 @@ export default function Testimonial() {
       <Section className="sticky top-0 pb-0">
         <Container size="full">
           <div className="flex gap-10 overflow-hidden">
-            <div className="bg-black  relative z-50">
-              <h1 className="uppercase text-8xl font-semibold">What clients has to say</h1>
+            <div className="bg-black  relative z-50 basis-1/6">
+              <h1 className="uppercase text-8xl font-semibold">Client Reviews</h1>
             </div>
-            <motion.div style={{ x }} className="">
+            <motion.div style={{ x }} className="w-full flex-shrink-0">
               <div className="flex flex-nowrap space-x-2">
-                <div className="size-80 bg-gray-500"></div>
-                <div className="size-80 bg-gray-500"></div>
-                <div className="size-80 bg-gray-500"></div>
-                <div className="size-80 bg-gray-500"></div>
-                <div className="size-80 bg-gray-500"></div>
-                <div className="size-80 bg-gray-500"></div>
-                <div className="size-80 bg-gray-500"></div>
-                <div className="size-80 bg-gray-500"></div>
-                <div className="size-80 bg-gray-500"></div>
+                {testimonials.map((testimonial, index) => (
+                  <TestimonialCard
+                    key={index}
+                    name={testimonial.name}
+                    title={testimonial.title}
+                    content={testimonial.content}
+                  />
+                ))}
               </div>
             </motion.div>
           </div>
@@ -42,3 +55,21 @@ export default function Testimonial() {
     </div>
   );
 }
+
+interface TestimonialCardProps {
+  name: string;
+  title: string;
+  content: string;
+}
+
+const TestimonialCard: React.FC<TestimonialCardProps> = ({ name, title, content }) => {
+  return (
+    <div className={`flex flex-col p-8 max-w-2xl text-2xl bg bg-[#01069E]`}>
+      <div className="flex flex-col space-y-2">
+        <h1 className="text-4xl font-medium">{name}</h1>
+        <p>{title}</p>
+      </div>
+      <p className="mt-10">{content}</p>
+    </div>
+  );
+};

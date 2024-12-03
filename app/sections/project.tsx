@@ -1,15 +1,28 @@
 "use client";
 
-import { Dispatch, SetStateAction, useState } from "react";
+import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
 import useWindowSize from "@/hooks/use-window-resize";
 import { cn } from "@/lib/utils";
-import { motion, Variants } from "framer-motion";
+import { motion, useInView, Variants } from "framer-motion";
 
 const VerticalAccordion = () => {
-  const [open, setOpen] = useState(items[0].id);
+  const [open, setOpen] = useState(0);
+  const targetRef = useRef(null);
+  const isInView = useInView(targetRef, {
+    amount: "some",
+  });
+
+  useEffect(() => {
+    if (isInView) {
+      setOpen(2);
+    } else {
+      setOpen(-1);
+    }
+    console.log({ isInView });
+  }, [isInView]);
 
   return (
-    <div className="h-screen">
+    <div ref={targetRef} className="h-[95vh]">
       <div className="flex flex-col lg:flex-row h-full w-full  shadow overflow-hidden gap-2">
         {items.map((item) => {
           return (
@@ -51,7 +64,7 @@ const Panel = ({ open, setOpen, id, title, imgSrc, description }: PanelProps) =>
           backgroundSize: "cover",
         }}
         className={cn(
-          "relative p-3 flex flex-row-reverse lg:flex-col justify-end items-center gap-8 relative group w-16 cursor-pointer bg-red-500 transition-all duration-800 ease-accordion-project",
+          "relative p-3 flex flex-row-reverse lg:flex-col justify-end items-center gap-8 relative group w-16 cursor-pointer transition-all duration-800 ease-accordion-project",
           isOpen && "w-full",
         )}
         onClick={() => setOpen(id)}>

@@ -5,22 +5,14 @@ import "./globals.css";
 import Navbar from "./components/navbar";
 import { Footer } from "./sections";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
+const dx = localFont({
+  src: "./fonts/dxslight-mediumultra-free-personal-use.otf",
+  variable: "--font-dx",
 });
 
-// const dx = localFont({
-//   src: "./fonts/DxSlight.otf",
-//   variable: "--font-dx",
-//   weight: "100 900",
-// });
-
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
+const fontSans = localFont({
+  src: "./fonts/Montserrat-VariableFont_wght.ttf",
+  variable: "--font-main",
 });
 
 export const metadata: Metadata = {
@@ -36,7 +28,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} antialiased scrollbar-hide`}>
+      className={`${dx.variable} ${dx.variable} ${fontSans.variable} ${fontSans.className} antialiased scrollbar-hide`}>
       <body>
         <Navbar />
         <LenisProvider>{children}</LenisProvider>

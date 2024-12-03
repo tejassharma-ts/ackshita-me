@@ -31,15 +31,15 @@ export default function Menu() {
   const { checkActiveNav } = useCheckActiveNav();
   return (
     <Sheet open={isOpen} onOpenChange={setIsOpen}>
-      <SheetTrigger className="font-medium tracking-wider">MENU</SheetTrigger>
+      <SheetTrigger className="font-semibold font-main">MENU</SheetTrigger>
       <SheetContent className="flex items-center justify-center flex-col bg-black">
-        <ul className="flex flex-col items-center space-y-10 my-auto">
+        <ul className="flex flex-col items-center space-y-1.5 my-auto">
           {links.map((link) => (
             <li
               key={link.title}
               onClick={() => setIsOpen(false)}
               className={cn(
-                "uppercase text-6xl font-extrabold cursor-pointer text-muted-foreground hover:text-white transition-colors relative",
+                "uppercase text-[4.7rem] font-extrabold cursor-pointer text-muted-foreground hover:text-white transition-colors relative",
                 {
                   "text-white": checkActiveNav(link.href),
                 },
@@ -49,7 +49,7 @@ export default function Menu() {
             </li>
           ))}
         </ul>
-        <SheetFooter className="flex mt-auto text-xs flex-col items-center space-y-4 absolute bottom-8">
+        <SheetFooter className="flex mt-auto text-lg flex-col items-center space-y-6 absolute bottom-8 text-white font-medium">
           <div className="flex space-x-4">
             <a href="#" className="uppercase underline underline-offset-4">
               Email
@@ -63,7 +63,7 @@ export default function Menu() {
           </div>
           <div className="flex items-center space-x-1">
             <Icons.copyright size={10} />
-            <span className="uppercase">2024 Priyanka</span>
+            <span className="uppercase">2024 Ackshita</span>
           </div>
         </SheetFooter>
       </SheetContent>

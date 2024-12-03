@@ -48,7 +48,7 @@ export default function HeroImageCard({ imgUrl }: { imgUrl: string }) {
       className="sticky rounded-xl overflow-hidden mb-4"
       style={{
         top: `${vertMargin}vh`,
-        height: `${90 - 2 * vertMargin}vh`,
+        height: `${80 - 2 * vertMargin}vh`,
         scale: dynamicStyles.scale,
         // filter: `blur(${dynamicStyles.filter}px)`,
       }}>

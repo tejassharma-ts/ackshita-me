@@ -9,6 +9,12 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      transitionTimingFunction: {
+        "accordion-project": "cubic-bezier(.47,0,0,1)",
+      },
+      transitionDuration: {
+        "800": "800ms",
+      },
       fontFamily: {
         dx: ["var(--font-dx)"],
         main: ["var(--font-main)"],

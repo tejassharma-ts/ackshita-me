@@ -3,14 +3,13 @@
 import { Dispatch, SetStateAction, useState } from "react";
 import useWindowSize from "@/hooks/use-window-resize";
 import { cn } from "@/lib/utils";
-import { AnimatePresence, motion } from "framer-motion";
-import Container from "../components/container";
+import { motion, Variants } from "framer-motion";
 
 const VerticalAccordion = () => {
   const [open, setOpen] = useState(items[0].id);
 
   return (
-    <Container className="h-[90vh]" size="full">
+    <div className="h-screen">
       <div className="flex flex-col lg:flex-row h-full w-full  shadow overflow-hidden gap-2">
         {items.map((item) => {
           return (
@@ -26,7 +25,7 @@ const VerticalAccordion = () => {
           );
         })}
       </div>
-    </Container>
+    </div>
   );
 };
 
@@ -40,7 +39,6 @@ interface PanelProps {
 }
 
 const Panel = ({ open, setOpen, id, title, imgSrc, description }: PanelProps) => {
-  const { width } = useWindowSize();
   const isOpen = open === id;
 
   return (
@@ -48,66 +46,83 @@ const Panel = ({ open, setOpen, id, title, imgSrc, description }: PanelProps) =>
       <div
         style={{
           backgroundImage: `url(${imgSrc})`,
-          filter: "grayscale(100%)",
+          // filter: isOpen ? "grayscale(100%)" : "",
           backgroundPosition: "center",
           backgroundSize: "cover",
         }}
         className={cn(
-          "transition-colors p-3 flex flex-row-reverse lg:flex-col justify-end items-center gap-8 relative group w-16 cursor-pointer",
-          {
-            hidden: isOpen,
-          },
+          "relative p-3 flex flex-row-reverse lg:flex-col justify-end items-center gap-8 relative group w-16 cursor-pointer bg-red-500 transition-all duration-800 ease-accordion-project",
+          isOpen && "w-full",
         )}
         onClick={() => setOpen(id)}>
         <span
           style={{
             writingMode: "vertical-lr",
           }}
-          className="hidden lg:block text-xl font-light rotate-180">
-          {title}
+          className={cn(
+            "text-xl font-medium rotate-180 opacity-100 transition-opacity",
+            isOpen && "opacity-0",
+          )}>
+          {"0" + id}
         </span>
-        <span className="block lg:hidden text-xl font-light">{title}</span>
+        <div
+          className={cn("absolute inset-0 transition-colors duration-800", isOpen && "bg-black/60")}
+        />
+        <div
+          className={cn(
+            "scale-110 opacity-0 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 flex flex-col space-y-16 text-center duration-200",
+            isOpen && "transition-[transform_opacity] delay-700 opacity-100 scale-100",
+          )}>
+          <p className="text-base font-semibold">Origanization Name</p>
+          <h1 className="font-dx text-9xl">Poster Design</h1>
+        </div>
       </div>
 
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            key={`panel-${id}`}
-            variants={width && width > 1024 ? panelVariants : panelVariantsSm}
-            initial="closed"
-            animate="open"
-            exit="closed"
-            style={{
-              backgroundImage: `url(${imgSrc})`,
-              backgroundPosition: "center",
-              backgroundSize: "cover",
-            }}
-            className="w-full h-full overflow-hidden relative bg-black flex items-center justify-center">
-            <motion.div
-              variants={descriptionVariants}
-              initial="closed"
-              animate="open"
-              exit="closed"
-              className="">
-              <p className="text-lg max-w-lg text-center">{description}</p>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      {/* <AnimatePresence> */}
+      {/*   {isOpen && ( */}
+      {/*     <motion.div */}
+      {/*       key={`panel-${id}`} */}
+      {/*       variants={width && width > 1024 ? panelVariants : panelVariantsSm} */}
+      {/*       initial="closed" */}
+      {/*       animate="open" */}
+      {/*       exit="closed" */}
+      {/*       style={{ */}
+      {/*         backgroundImage: `url(${imgSrc})`, */}
+      {/*         backgroundPosition: "center", */}
+      {/*         backgroundSize: "cover", */}
+      {/*       }} */}
+      {/*       className="w-full h-full overflow-hidden relative bg-black flex items-center justify-center"> */}
+      {/* <motion.div */}
+      {/*   variants={descriptionVariants} */}
+      {/*   initial="closed" */}
+      {/*   animate="open" */}
+      {/*   exit="closed" */}
+      {/*   className=""> */}
+      {/*   <p className="text-lg max-w-lg text-center">{description}</p> */}
+      {/* </motion.div> */}
+      {/*     </motion.div> */}
+      {/*   )} */}
+      {/* </AnimatePresence> */}
     </>
   );
 };
 
 export default VerticalAccordion;
 
-const panelVariants = {
+const panelVariants: Variants = {
   open: {
     width: "100%",
     height: "100%",
+    transition: {
+      duration: 0.8,
+    },
   },
   closed: {
     width: "0%",
     height: "100%",
+    transition: {
+      duration: 0.8,
+    },
   },
 };
 

@@ -5,8 +5,8 @@ export default function Home() {
     <>
       <Hero />
       <About />
-      {/* <Promo /> */}
-      {/* <Project /> */}
+      <Promo />
+      <Project />
       {/* <Services /> */}
       {/* <Testimonial /> */}
     </>

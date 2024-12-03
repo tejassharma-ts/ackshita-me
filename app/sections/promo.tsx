@@ -7,7 +7,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 export default function Promo() {
   const targetRef = useRef(null);
   const { scrollYProgress } = useScroll({ target: targetRef });
-  const [ww, setWw] = useState();
+  const [ww, setWw] = useState(0);
 
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
   const wordReveal = useTransform(scrollYProgress, [0, 1], [0, 100]);
@@ -40,9 +40,15 @@ export default function Promo() {
   const delta = 100 / words.length;
   return (
     <div ref={targetRef} className="h-[300vh]">
-      <div className="h-screen bg-white sticky top-0 p-4">
-        <motion.div style={{ width: y }} className="h-full bg-[#161310] rounded-2xl" />
-        <div className="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 text-3xl mix-blend-difference w-full max-w-3xl">
+      <div className={cn("h-screen bg-white sticky top-0 p-4 transition-all", ww === 100 && "p-0")}>
+        <motion.div
+          style={{ width: y }}
+          className={cn(
+            "h-full bg-[#161310] rounded-2xl transform-all",
+            ww === 100 && "rounded-none",
+          )}
+        />
+        <div className="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 text-[2.2vw] mix-blend-difference w-full max-w-7xl">
           <p className="text-center uppercase">
             Explore,{" "}
             {words.map((word, idx) => {

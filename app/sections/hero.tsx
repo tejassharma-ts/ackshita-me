@@ -20,7 +20,7 @@ export default function Hero() {
           <h1 className="bg-gradient-to-r from-white to-white/50 bg-clip-text text-transparent">
             Create
           </h1>
-          <h1 className="text-[5vw]  -translate-y-4 bg-gradient-to-r from-white to-white/50 bg-clip-text text-transparent">
+          <h1 className="text-[5vw]  mb-[4%] bg-gradient-to-r from-white to-white/50 bg-clip-text text-transparent">
             Your
           </h1>
           <h1 className="bg-gradient-to-r from-white to-white/50 bg-clip-text text-transparent">

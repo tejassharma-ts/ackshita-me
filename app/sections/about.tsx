@@ -33,7 +33,7 @@ export default function About() {
 
   useEffect(() => {
     const unsubscribe = x.onChange((latest) => {
-      if (latest > 50) {
+      if (latest > 30) {
         setUp(true);
       } else {
         setUp(false);
@@ -47,13 +47,13 @@ export default function About() {
 
   return (
     <div ref={targetRef} className="h-[200vh]">
-      <div className="h-screen sticky top-0 flex justify-center items-center">
+      <div className="h-screen sticky top-0 flex justify-center items-center font-medium">
         <div className="absolute inset-0 flex justify-center items-center flex-col">
           {textLines.map((text, idx) => (
             <div key={idx} className="overflow-hidden">
               <h1
                 className={cn(
-                  "text-3xl max-w-6xl text-center transition-transform duration-700 leading-[1.4]",
+                  "text-[2.2vw]  text-center transition-transform duration-700 leading-[1.4] ease-[cubic-bezier(.16,1,.3,1)]",
                   up && "-translate-y-full",
                 )}>
                 {text}
@@ -67,7 +67,7 @@ export default function About() {
             <div key={idx} className="overflow-hidden">
               <h1
                 className={cn(
-                  "translate-y-full text-3xl max-w-6xl text-center transition-transform duration-700 leading-[1.4]",
+                  "translate-y-full text-[2.2vw] text-center transition-transform duration-700 leading-[1.4] ease-[cubic-bezier(.16,1,.3,1)]",
                   up && "translate-y-0",
                 )}>
                 {text}
@@ -77,12 +77,12 @@ export default function About() {
           <div className="overflow-hidden">
             <div
               className={cn(
-                "translate-y-full text-3xl max-w-6xl text-center transition-transform duration-700 leading-[1.4]",
+                "translate-y-full mt-8 text-center transition-transform duration-700 leading-[1.4] ease-[cubic-bezier(.16,1,.3,1)]",
                 up && "translate-y-0",
               )}>
               <Link
                 href="/about"
-                className="text-sm uppercase underline underline-offset-4 font-medium">
+                className="text-lg uppercase underline underline-offset-4 font-medium">
                 Know more
               </Link>
             </div>

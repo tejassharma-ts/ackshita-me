@@ -4,6 +4,7 @@ import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
 import useWindowSize from "@/hooks/use-window-resize";
 import { cn } from "@/lib/utils";
 import { motion, useInView, Variants } from "framer-motion";
+import Link from "next/link";
 
 const VerticalAccordion = () => {
   const [open, setOpen] = useState(0);
@@ -62,8 +63,8 @@ const Panel = ({ open, setOpen, id, title, imgSrc }: PanelProps) => {
           backgroundSize: "cover",
         }}
         className={cn(
-          "relative p-3 flex flex-row-reverse lg:flex-col justify-end items-center gap-8 relative group w-16 cursor-pointer transition-all duration-800 ease-accordion-project",
-          isOpen && "w-full",
+          "relative p-3 flex flex-row-reverse lg:flex-col justify-end items-center gap-8 group w-16 cursor-pointer transition-all duration-800 ease-accordion-project",
+          isOpen && "w-full cursor-auto",
         )}
         onClick={() => setOpen(id)}>
         <span
@@ -85,7 +86,12 @@ const Panel = ({ open, setOpen, id, title, imgSrc }: PanelProps) => {
             isOpen && "transition-[transform_opacity] delay-700 opacity-100 scale-100",
           )}>
           {/* <p className="font-semibold text-lg">Origanization Name</p> */}
-          <h1 className="font-dx text-[10vw]">{title}</h1>
+          <div className="relative">
+            <h1 className="font-dx text-[10vw]">{title}</h1>
+            {isOpen ? (
+              <Link href={`/projects/${id}`} scroll={false} className="absolute inset-0" />
+            ) : null}
+          </div>
         </div>
       </div>
     </>

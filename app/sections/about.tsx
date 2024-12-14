@@ -17,9 +17,9 @@ const textLines = [
 ];
 
 const textLinesV2 = [
-  "I AM A BRAND DESIGNER THAT MAKES",
-  "AWESOME BRANDS. LOREM IPSUM WONG",
-  "KAR WAI.",
+  "I'M A BRAND STRATEGIST WITH A KNACK",
+  "FOR SOLVING BUSINESS PROBLEMS THROUGH",
+  "DESIGN AND STORYTELLING.",
 ];
 
 export default function About() {

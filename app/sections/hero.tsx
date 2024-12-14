@@ -2,9 +2,9 @@ import Container from "../components/container";
 import HeroImageCard from "../components/hero-image-card";
 
 const images = [
-  "https://images.pexels.com/photos/583345/pexels-photo-583345.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-  "https://images.pexels.com/photos/3498988/pexels-photo-3498988.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-  "https://images.pexels.com/photos/206901/pexels-photo-206901.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+  "/projects/amudhu-cover.png",
+  "/projects/tel-ganesan.jpg",
+  "/projects/hy-veg.png",
 ];
 
 export default function Hero() {

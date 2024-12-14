@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Accordion,
   AccordionContent,
@@ -6,6 +8,7 @@ import {
 } from "@/components/ui/accordion";
 import Image from "next/image";
 import Container from "../components/container";
+import { FadeIn } from "../components/fade-in";
 import Section from "../components/section";
 import { Footer } from "../sections";
 
@@ -153,7 +156,7 @@ export default function AboutPage() {
       </Section>
       <Section className="pt-52">
         <Container>
-          <div className="flex justify-between items-center">
+          <div className="flex justify-between">
             <div className="flex flex-col">
               <div className="flex flex-col">
                 <h1 className="text-[10rem] font-dx">My story</h1>
@@ -161,29 +164,45 @@ export default function AboutPage() {
               </div>
               <div className="border-l pl-4 mt-14">
                 <div className="flex flex-col max-w-xl gap-14">
-                  <div className="relative flex flex-col space-y-4 before:absolute before:h-full before:bg-white before:w-1 before:-left-4 before:-translate-x-1/2 before:rounded-full font-medium">
-                    <h1 className="text-4xl font-semibold">My Mission.</h1>
-                    <p>
-                      Challenge convention and spark meaningful change by creatively solving
-                      business problems through design and storytelling. I believe in the power of
-                      leveraging deep human insights to create brands that don’t just stand out—they
-                      inspire action, connection, and loyalty.
-                    </p>
-                  </div>
-                  <div className="relative flex flex-col space-y-4 before:absolute before:h-full before:bg-white before:w-1 before:-left-4 before:-translate-x-1/2 before:rounded-full font-medium">
-                    <h1 className="text-4xl font-semibold">My Approach.</h1>
-                    <p>
-                      With a brazen, cheerful, and steadfast approach, I work closely with my
-                      clients to bring their unique vision to life in ways that resonate on a human
-                      level. I don’t believe in a one-size-fits-all approach. Instead, I dive into
-                      the core of what makes each brand special, crafting identities and strategies
-                      that solve real challenges and leave lasting impressions.
-                    </p>
-                  </div>
+                  <FadeIn>
+                    <div className="relative flex flex-col space-y-4 before:absolute before:h-full before:bg-white before:w-1 before:-left-4 before:-translate-x-1/2 before:rounded-full font-medium">
+                      <h1 className="text-4xl font-semibold">My Mission.</h1>
+                      <p>
+                        Challenge convention and spark meaningful change by creatively solving
+                        business problems through design and storytelling. I believe in the power of
+                        leveraging deep human insights to create brands that don’t just stand
+                        out—they inspire action, connection, and loyalty.
+                      </p>
+                    </div>
+                  </FadeIn>
+                  <FadeIn>
+                    <div className="relative flex flex-col space-y-4 before:absolute before:h-full before:bg-white before:w-1 before:-left-4 before:-translate-x-1/2 before:rounded-full font-medium">
+                      <h1 className="text-4xl font-semibold">My Approach.</h1>
+                      <p>
+                        With a brazen, cheerful, and steadfast approach, I work closely with my
+                        clients to bring their unique vision to life in ways that resonate on a
+                        human level. I don’t believe in a one-size-fits-all approach. Instead, I
+                        dive into the core of what makes each brand special, crafting identities and
+                        strategies that solve real challenges and leave lasting impressions.
+                      </p>
+                    </div>
+                  </FadeIn>
+                  <FadeIn>
+                    <div className="relative flex flex-col space-y-4 before:absolute before:h-full before:bg-white before:w-1 before:-left-4 before:-translate-x-1/2 before:rounded-full font-medium">
+                      <h1 className="text-4xl font-semibold">My Goal.</h1>
+                      <p>
+                        To create more than just brands. I’m here to build communities, forge
+                        genuine connections, and help brands find and cultivate their loyal tribe.
+                        I’m excited to partner with those who are ready to break boundaries and
+                        embrace fresh perspectives. If you’re ready to inspire action and stand
+                        apart, let’s make it happen.
+                      </p>
+                    </div>
+                  </FadeIn>
                 </div>
               </div>
             </div>
-            <div>
+            <div className="sticky top-32 h-fit mt-32">
               <Image
                 src="/ak-standing.png"
                 className="hover:-scale-x-[100%]"

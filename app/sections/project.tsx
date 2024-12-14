@@ -33,7 +33,6 @@ const VerticalAccordion = () => {
               id={item.id}
               title={item.title}
               imgSrc={item.imgSrc}
-              description={item.description}
             />
           );
         })}
@@ -48,10 +47,9 @@ interface PanelProps {
   id: number;
   title: string;
   imgSrc: string;
-  description: string;
 }
 
-const Panel = ({ open, setOpen, id, title, imgSrc, description }: PanelProps) => {
+const Panel = ({ open, setOpen, id, title, imgSrc }: PanelProps) => {
   const isOpen = open === id;
 
   return (
@@ -83,39 +81,13 @@ const Panel = ({ open, setOpen, id, title, imgSrc, description }: PanelProps) =>
         />
         <div
           className={cn(
-            "scale-110 opacity-0 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 flex flex-col space-y-16 text-center duration-200",
+            "scale-110 opacity-0 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 flex flex-col space-y-4 text-center duration-200",
             isOpen && "transition-[transform_opacity] delay-700 opacity-100 scale-100",
           )}>
-          <p className="text-base font-semibold">Origanization Name</p>
-          <h1 className="font-dx text-9xl">Poster Design</h1>
+          {/* <p className="font-semibold text-lg">Origanization Name</p> */}
+          <h1 className="font-dx text-[10vw]">{title}</h1>
         </div>
       </div>
-
-      {/* <AnimatePresence> */}
-      {/*   {isOpen && ( */}
-      {/*     <motion.div */}
-      {/*       key={`panel-${id}`} */}
-      {/*       variants={width && width > 1024 ? panelVariants : panelVariantsSm} */}
-      {/*       initial="closed" */}
-      {/*       animate="open" */}
-      {/*       exit="closed" */}
-      {/*       style={{ */}
-      {/*         backgroundImage: `url(${imgSrc})`, */}
-      {/*         backgroundPosition: "center", */}
-      {/*         backgroundSize: "cover", */}
-      {/*       }} */}
-      {/*       className="w-full h-full overflow-hidden relative bg-black flex items-center justify-center"> */}
-      {/* <motion.div */}
-      {/*   variants={descriptionVariants} */}
-      {/*   initial="closed" */}
-      {/*   animate="open" */}
-      {/*   exit="closed" */}
-      {/*   className=""> */}
-      {/*   <p className="text-lg max-w-lg text-center">{description}</p> */}
-      {/* </motion.div> */}
-      {/*     </motion.div> */}
-      {/*   )} */}
-      {/* </AnimatePresence> */}
     </>
   );
 };
@@ -165,33 +137,20 @@ const descriptionVariants = {
 const items = [
   {
     id: 1,
-    title: "Earn more",
-    imgSrc:
-      "https://images.pexels.com/photos/633409/pexels-photo-633409.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum eius deserunt quia consectetur aliquid obcaecati voluptatibus quos distinctio natus! Tenetur.",
+    title: "LLMA",
+    imgSrc: "/projects/llma.png",
   },
   {
     id: 2,
-    title: "Play more",
-    imgSrc:
-      "https://images.pexels.com/photos/196659/pexels-photo-196659.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    title: "Amudhu Snacks Co.",
+    imgSrc: "/projects/amudhu-cover.png",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum eius deserunt quia consectetur aliquid obcaecati voluptatibus quos distinctio natus! Tenetur.",
   },
   {
     id: 3,
-    title: "Keep track",
-    imgSrc:
-      "https://images.pexels.com/photos/234527/pexels-photo-234527.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum eius deserunt quia consectetur aliquid obcaecati voluptatibus quos distinctio natus! Tenetur.",
-  },
-  {
-    id: 4,
-    title: "Grow faster",
-    imgSrc:
-      "https://images.pexels.com/photos/245032/pexels-photo-245032.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    title: "HyVeg",
+    imgSrc: "/projects/hy-veg.png",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum eius deserunt quia consectetur aliquid obcaecati voluptatibus quos distinctio natus! Tenetur.",
   },

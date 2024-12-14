@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { cn } from "@/lib/utils";
@@ -41,8 +44,11 @@ export default function Footer({ className }: { className?: string }) {
           <p className="uppercase text-muted-foreground font-medium">
             based in india - working worldwide
           </p>
-          <p className="uppercase text-muted-foreground font-medium">
-            local time <span className="text-white  font-semibold">34: 30</span>
+          <p className="flex space-x-4 uppercase text-muted-foreground font-medium">
+            <span>local time</span>
+            <span className="text-white  font-semibold">
+              <RealTimeClock />
+            </span>
           </p>
         </Container>
         <Separator className="mt-6 mb-12" />
@@ -73,5 +79,23 @@ export default function Footer({ className }: { className?: string }) {
         </Container>
       </div>
     </footer>
+  );
+}
+
+function RealTimeClock() {
+  const [dateState, setDateState] = useState(new Date());
+
+  useEffect(() => {
+    setInterval(() => setDateState(new Date()), 30000);
+  }, []);
+
+  return (
+    <p>
+      {dateState.toLocaleString("en-US", {
+        hour: "numeric",
+        minute: "numeric",
+        hour12: true,
+      })}
+    </p>
   );
 }

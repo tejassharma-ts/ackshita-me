@@ -26,28 +26,30 @@ export default function Testimonial() {
     target: targetRef,
   });
 
-  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-60%"]);
+  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-100%"]);
 
   return (
-    <div ref={targetRef} className="h-[200vh]">
+    <div ref={targetRef} className="h-[300vh]">
       <Section className="sticky top-0 pb-0">
         <Container size="full">
           <div className="flex gap-10 overflow-hidden">
             <div className="bg-black  relative z-50 basis-1/6">
               <h1 className="uppercase text-8xl font-semibold">Client Reviews</h1>
             </div>
-            <motion.div style={{ x }} className="w-full flex-shrink-0">
-              <div className="flex flex-nowrap space-x-2">
-                {testimonials.map((testimonial, index) => (
-                  <TestimonialCard
-                    key={index}
-                    name={testimonial.name}
-                    title={testimonial.title}
-                    content={testimonial.content}
-                  />
-                ))}
-              </div>
-            </motion.div>
+            <div className="flex-shrink-0 overflow-hidden w-full">
+              <motion.div style={{ x }} className="w-full">
+                <div className="flex flex-nowrap space-x-2">
+                  {testimonials.map((testimonial, index) => (
+                    <TestimonialCard
+                      key={index}
+                      name={testimonial.name}
+                      title={testimonial.title}
+                      content={testimonial.content}
+                    />
+                  ))}
+                </div>
+              </motion.div>
+            </div>
           </div>
         </Container>
         <Footer />

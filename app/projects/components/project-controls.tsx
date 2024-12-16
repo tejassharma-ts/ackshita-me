@@ -3,9 +3,10 @@
 import { useEffect } from "react";
 import Container from "@/app/components/container";
 import Section from "@/app/components/section";
+import { projects } from "@/data";
+import { useLenis } from "lenis/react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { projects } from "../[id]/page";
 
 type ProjectControlsProps = {
   next: number;
@@ -14,9 +15,10 @@ type ProjectControlsProps = {
 
 export default function ProjectControls({ next, prev }: ProjectControlsProps) {
   const pathname = usePathname();
+  const lenis = useLenis();
 
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    lenis?.scrollTo(0);
   }, [pathname]);
 
   return (

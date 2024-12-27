@@ -3,7 +3,7 @@ import { About, Footer, Hero, Project, Promo, Services, Testimonial } from "./se
 export default function Home() {
   return (
     <>
-      {/* <Hero /> */}
+      <Hero />
       <About />
       {/* <Promo /> */}
       {/* <Project /> */}

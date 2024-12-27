@@ -47,7 +47,7 @@ export default function About() {
 
   return (
     <div ref={targetRef} className="h-[200vh]">
-      <div className="h-screen sticky top-0 flex justify-center items-center font-medium">
+      <div className="h-screen sticky top-0 flex justify-center items-center font-medium border">
         <div className="absolute inset-0 flex justify-center items-center flex-col">
           {textLines.map((text, idx) => (
             <div key={idx} className="overflow-hidden">

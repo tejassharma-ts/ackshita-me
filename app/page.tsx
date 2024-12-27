@@ -6,7 +6,7 @@ export default function Home() {
       <Hero />
       <About />
       <Promo />
-      {/* <Project /> */}
+      <Project />
       {/* <Services /> */}
       {/* <Testimonial /> */}
     </>

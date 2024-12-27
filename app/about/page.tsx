@@ -217,7 +217,7 @@ export default function AboutPage() {
       <Section>
         <Container>
           <div className="flex flex-col items-center">
-            <p className="max-w-xl text-center mb-4 font-medium">
+            <p className="max-w-8xl text-center mb-4 font-medium">
               A GREAT BRAND IDENTIFIES AND CULTIVATES A LOYAL TRIBE OF PEOPLE BASED ON A CONNECTION
               LARGER THAN THE PRODUCT BE IT THEIR VALUES OR PHILOSOPHY. HERE'S A BREAKDOWN OF THE
               KEY STEPS I FOLLOW TO CREATE SUCH A BRAND.

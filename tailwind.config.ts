@@ -8,6 +8,29 @@ const config: Config = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    screens: {
+      "2xl": {
+        min: "1900px",
+      },
+      xl: {
+        max: "1279px",
+      },
+      lg: {
+        max: "1023px",
+      },
+      md: {
+        max: "767px",
+      },
+      sm: {
+        max: "639px",
+      },
+      tiny: {
+        max: "490px",
+      },
+      xs: {
+        max: "300px",
+      },
+    },
     extend: {
       transitionTimingFunction: {
         "accordion-project": "cubic-bezier(.47,0,0,1)",

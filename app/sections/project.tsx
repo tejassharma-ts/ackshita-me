@@ -2,6 +2,7 @@
 
 import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
 import useWindowSize from "@/hooks/use-window-resize";
+import { projects } from "@/data";
 import { cn } from "@/lib/utils";
 import { motion, useInView, Variants } from "framer-motion";
 import Link from "next/link";
@@ -23,7 +24,12 @@ const VerticalAccordion = () => {
   }, [isInView]);
 
   return (
-    <div ref={targetRef} className="h-[95vh]">
+    <div ref={targetRef} className="h-screen flex flex-col">
+      <div className="bg-[#161310] flex justify-between text-8xl items-center pb-4">
+        <span>0{open}</span>
+        <span className="text-4xl absolute left-1/2 -translate-x-1/2 translate-y-1/2">/</span>
+        <span>0{projects.length}</span>
+      </div>
       <div className="flex flex-col lg:flex-row h-full w-full  shadow overflow-hidden gap-2">
         {items.map((item) => {
           return (
@@ -55,7 +61,8 @@ const Panel = ({ open, setOpen, id, title, imgSrc }: PanelProps) => {
 
   return (
     <>
-      <div
+      <motion.div
+        layoutId={`project-${id}`}
         style={{
           backgroundImage: `url(${imgSrc})`,
           // filter: isOpen ? "grayscale(100%)" : "",
@@ -85,15 +92,15 @@ const Panel = ({ open, setOpen, id, title, imgSrc }: PanelProps) => {
             "scale-110 opacity-0 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 flex flex-col space-y-4 text-center duration-200",
             isOpen && "transition-[transform_opacity] delay-700 opacity-100 scale-100",
           )}>
-          {/* <p className="font-semibold text-lg">Origanization Name</p> */}
+          <p className="font-semibold text-lg">Origanization Name</p>
           <div className="relative">
-            <h1 className="font-dx text-[10vw]">{title}</h1>
-            {isOpen ? (
-              <Link href={`/projects/${id}`} scroll={false} className="absolute inset-0" />
-            ) : null}
+            <motion.h1 layoutId={`title-${id}`} className="font-dx text-[10vw] whitespace-nowrap">
+              {title}
+            </motion.h1>
+            {isOpen ? <Link href={`/projects/${id}`} className="absolute inset-0" /> : null}
           </div>
         </div>
-      </div>
+      </motion.div>
     </>
   );
 };

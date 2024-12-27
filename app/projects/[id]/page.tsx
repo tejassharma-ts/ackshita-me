@@ -1,6 +1,9 @@
+"use client";
+
 import { ReactNode } from "react";
 import { projects } from "@/data";
 import { cn } from "@/lib/utils";
+import { AnimatePresence, motion } from "framer-motion";
 import { PageNotFoundError } from "next/dist/shared/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
@@ -81,18 +84,29 @@ export default function AboutPage({ params }: AboutPageProps) {
         <Container className="">
           <div className="relative flex justify-center flex-col text-center">
             {/* <p className="text-gray-400">Organization Name</p> */}
-            <h1 className="text-5xl font-medium  font-dx">{project.name}</h1>
+            <AnimatePresence>
+              <motion.h1
+                transition={{
+                  duration: 0.4,
+                }}
+                layoutId={`title-${params.id}`}
+                className="text-6xl font-medium  font-dx z-50">
+                {project.name}
+              </motion.h1>
+            </AnimatePresence>
           </div>
         </Container>
       </Section>
       <Container className="relative h-full min-h-[600px]">
-        <Image
-          src={project.mainImgSrc}
-          fill
-          alt="project sample"
-          className="rounded-3xl"
-          style={{ objectFit: "cover" }}
-        />
+        <AnimatePresence>
+          <motion.img
+            layoutId={`project-${params.id}`}
+            src={project.mainImgSrc}
+            alt="project sample"
+            className="rounded-3xl w-full h-full"
+            style={{ objectFit: "cover" }}
+          />
+        </AnimatePresence>
       </Container>
       <Section>
         <Container>

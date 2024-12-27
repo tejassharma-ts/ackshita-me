@@ -40,10 +40,6 @@ export default function Services() {
     <Section>
       <Container size="full">
         <div className="flex flex-col items-center space-y-6">
-          <p className="uppercase text-center font-medium">
-            I work with various brands to provide them <br />
-            multiple designs services
-          </p>
           <h1 className="text-[10rem] font-dx uppercase">Services</h1>
         </div>
         <div className="grid grid-cols-2 gap-10 mt-16 max-w-6xl mx-auto">

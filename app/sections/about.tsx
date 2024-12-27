@@ -47,13 +47,13 @@ export default function About() {
 
   return (
     <div ref={targetRef} className="h-[200vh]">
-      <div className="h-screen sticky top-0 flex justify-center items-center font-medium border">
+      <div className="h-screen sticky top-0 flex justify-center items-center font-medium">
         <div className="absolute inset-0 flex justify-center items-center flex-col">
           {textLines.map((text, idx) => (
             <div key={idx} className="overflow-hidden">
               <h1
                 className={cn(
-                  "text-[2.2vw]  text-center transition-transform duration-700 leading-[1.4] ease-[cubic-bezier(.16,1,.3,1)]",
+                  "text-[clamp(1.6rem,2.2vw,5rem)] text-center transition-transform duration-700 leading-[1.4] ease-[cubic-bezier(.16,1,.3,1)]",
                   up && "-translate-y-full",
                 )}>
                 {text}
@@ -67,7 +67,7 @@ export default function About() {
             <div key={idx} className="overflow-hidden">
               <h1
                 className={cn(
-                  "translate-y-full text-[2.2vw] text-center transition-transform duration-700 leading-[1.4] ease-[cubic-bezier(.16,1,.3,1)]",
+                  "translate-y-full text-[clamp(1.6rem,2.2vw,5rem)] text-center transition-transform duration-700 leading-[1.4] ease-[cubic-bezier(.16,1,.3,1)]",
                   up && "translate-y-0",
                 )}>
                 {text}

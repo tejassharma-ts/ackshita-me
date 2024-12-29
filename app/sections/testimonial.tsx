@@ -45,7 +45,7 @@ export default function Testimonial() {
 
   return (
     <div ref={targetRef} className="h-[300vh] sm:h-full">
-      <Section className="sticky top-0 pb-0">
+      <Section className="sticky top-0 pb-0 sm:pb-0">
         <Container size="full">
           <div className="flex lg:flex-col gap-10 overflow-hidden">
             <div className="bg-black  relative z-50 basis-1/6">

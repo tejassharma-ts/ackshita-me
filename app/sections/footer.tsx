@@ -28,7 +28,7 @@ const socialLinks = [
 ];
 export default function Footer({ className }: { className?: string }) {
   return (
-    <footer className={cn("mt-44 pb-10 sm:mt-10", className)}>
+    <footer className={cn("mt-44 pb-10 sm:mt-10 sm:pb-4", className)}>
       <div className="flex flex-col items-center  space-y-6">
         <p className="uppercase text-center font-medium">( need an unfair advantage? )</p>
         <h1 className="text-[10rem] md:text-[5rem] sm:text-[4.7rem] font-dx text-center uppercase">
@@ -51,7 +51,7 @@ export default function Footer({ className }: { className?: string }) {
             </span>
           </p>
         </Container>
-        <Separator className="mt-6 mb-12" />
+        <Separator className="mt-6 mb-12 sm:mt-12" />
         <Container className="flex justify-between w-full items-center md:flex-col gap-6 md:justify-center" size="full">
           <div className="w-1/3 md:flex md:justify-center">
             <Logo />

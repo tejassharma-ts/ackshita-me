@@ -40,9 +40,11 @@ export default function Services() {
     <Section>
       <Container size="full">
         <div className="flex flex-col items-center space-y-6">
-          <h1 className="text-[10rem] font-dx uppercase">Services</h1>
+          <h1 className="text-[10rem] md:text-[5rem] sm:text-[4.7rem] font-dx uppercase">
+            Services
+          </h1>
         </div>
-        <div className="grid grid-cols-2 gap-10 mt-16 max-w-6xl mx-auto">
+        <div className="grid grid-cols-2 gap-10 mt-16 max-w-6xl mx-auto md:grid-cols-1">
           {cardData.map((card, index) => (
             <BrandStrategyCard
               key={index}

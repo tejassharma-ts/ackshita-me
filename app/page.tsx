@@ -5,10 +5,10 @@ export default function Home() {
     <>
       <Hero />
       <About />
-      <Promo />
+      {/* <Promo /> */}
       <Project />
       <Services />
-      {/* <Testimonial /> */}
+      <Testimonial />
     </>
   );
 }

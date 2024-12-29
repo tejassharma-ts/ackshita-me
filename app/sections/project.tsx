@@ -23,10 +23,12 @@ const VerticalAccordion = () => {
   }, [isInView]);
 
   return (
-    <div ref={targetRef} className="h-screen flex flex-col">
-      <div className="bg-[#161310] flex justify-between text-8xl items-center pb-4">
+    <div ref={targetRef} className="h-screen flex flex-col md:h-[80vh]">
+      <div className="bg-[#161310] flex justify-between text-8xl items-center pb-4 sm:text-4xl">
         <span>0{open}</span>
-        <span className="text-4xl absolute left-1/2 -translate-x-1/2 translate-y-1/2">/</span>
+        <span className="text-4xl absolute left-1/2 -translate-x-1/2 translate-y-1/2 sm:-translate-y-0">
+          /
+        </span>
         <span>0{projects.length}</span>
       </div>
       <div className="flex flex-row h-full w-full shadow overflow-hidden gap-2">
@@ -69,8 +71,8 @@ const Panel = ({ open, setOpen, id, title, imgSrc }: PanelProps) => {
           backgroundSize: "cover",
         }}
         className={cn(
-          "relative p-3 flex flex-col justify-end items-center gap-8 group w-16 cursor-pointer transition-all duration-800 ease-accordion-project",
-          isOpen && "w-full cursor-auto",
+          "relative p-3 flex flex-col justify-end items-center gap-8 group w-16 cursor-pointer transition-all duration-800 ease-accordion-project sm:w-8",
+          isOpen && "w-full cursor-auto sm:w-full",
         )}
         onClick={() => setOpen(id)}>
         <span
@@ -93,7 +95,9 @@ const Panel = ({ open, setOpen, id, title, imgSrc }: PanelProps) => {
           )}>
           <p className="font-semibold text-lg">Origanization Name</p>
           <div className="relative">
-            <motion.h1 layoutId={`title-${id}`} className="font-dx text-[10vw] whitespace-nowrap">
+            <motion.h1
+              layoutId={`title-${id}`}
+              className="font-dx text-[clamp(3rem,10vw,5rem)] whitespace-nowrap">
               {title}
             </motion.h1>
             {isOpen ? <Link href={`/projects/${id}`} className="absolute inset-0" /> : null}

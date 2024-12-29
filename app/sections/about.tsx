@@ -53,7 +53,7 @@ export default function About() {
             <div key={idx} className="overflow-hidden">
               <h1
                 className={cn(
-                  "text-[2.2vw] text-center transition-transform duration-700 leading-[1.4] ease-[cubic-bezier(.16,1,.3,1)]",
+                  "text-[2.2vw] sm:text-[2.8vw] text-center transition-transform duration-700 leading-[1.4] ease-[cubic-bezier(.16,1,.3,1)]",
                   up && "-translate-y-full",
                 )}>
                 {text}
@@ -67,7 +67,7 @@ export default function About() {
             <div key={idx} className="overflow-hidden">
               <h1
                 className={cn(
-                  "translate-y-full text-[2.2vw] text-center transition-transform duration-700 leading-[1.4] ease-[cubic-bezier(.16,1,.3,1)]",
+                  "translate-y-full text-[2.2vw] sm:text-[2.8vw] text-center transition-transform duration-700 leading-[1.4] ease-[cubic-bezier(.16,1,.3,1)]",
                   up && "translate-y-0",
                 )}>
                 {text}

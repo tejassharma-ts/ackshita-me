@@ -1,6 +1,21 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState } from "react";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Container from "../components/container";
 import Section from "../components/section";
@@ -32,11 +47,13 @@ export default function Testimonial() {
     <div ref={targetRef} className="h-[300vh]">
       <Section className="sticky top-0 pb-0">
         <Container size="full">
-          <div className="flex gap-10 overflow-hidden">
+          <div className="flex lg:flex-col gap-10 overflow-hidden">
             <div className="bg-black  relative z-50 basis-1/6">
-              <h1 className="uppercase text-8xl font-semibold">Client Reviews</h1>
+              <h1 className="uppercase text-8xl md:text-[5rem] sm:text-[4rem] font-semibold">
+                Client Reviews
+              </h1>
             </div>
-            <div className="flex-shrink-0 overflow-hidden w-full">
+            <div className="flex-shrink-0 overflow-hidden w-full md:hidden">
               <motion.div style={{ x }} className="w-full">
                 <div className="flex flex-nowrap space-x-2">
                   {testimonials.map((testimonial, index) => (
@@ -50,6 +67,25 @@ export default function Testimonial() {
                 </div>
               </motion.div>
             </div>
+
+            <Carousel
+              className="w-full hidden md:block"
+              opts={{
+                loop: true,
+                align: "start",
+              }}>
+              <CarouselContent>
+                {testimonials.map((testimonial, idx) => (
+                  <CarouselItem key={idx} className="basis-1/3 md:basis-1/2 sm:basis-full">
+                    <TestimonialCard
+                      name={testimonial.name}
+                      title={testimonial.title}
+                      content={testimonial.content}
+                    />
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+            </Carousel>
           </div>
         </Container>
         <Footer />
@@ -64,14 +100,39 @@ interface TestimonialCardProps {
   content: string;
 }
 
-const TestimonialCard: React.FC<TestimonialCardProps> = ({ name, title, content }) => {
+const TestimonialCard: React.FC<TestimonialCardProps> = ({ name, title, content: description }) => {
+  const [isReadMore, setIsReadMore] = useState(true);
+  const toggleReadMore = () => {
+    setIsReadMore(!isReadMore);
+  };
+
   return (
     <div className={`flex flex-col p-8 max-w-2xl text-2xl bg bg-[#01069E]`}>
-      <div className="flex flex-col space-y-2">
+      <div className="flex flex-col space-y-2 sm:mb-4">
         <h1 className="text-4xl font-medium">{name}</h1>
-        <p>{title}</p>
+        <p className="font-medium">{title}</p>
       </div>
-      <p className="mt-10">{content}</p>
+      <p>{description}</p>
+      {/* {typeof description === "string" ? ( */}
+      {/*   <p> */}
+      {/*     {isReadMore ? description.slice(0, 150).concat("...") : description} */}
+      {/*     {description.length > 150 && ( */}
+      {/*       <Dialog> */}
+      {/*         <DialogTrigger asChild> */}
+      {/*           <span className="cursor-pointer hover:text-primary block">Read more</span> */}
+      {/*         </DialogTrigger> */}
+      {/*         <DialogContent className="rounded-sm"> */}
+      {/*           <DialogHeader> */}
+      {/*             <DialogTitle className="text-xl">{title}</DialogTitle> */}
+      {/*             <DialogDescription className="text-base">{description}</DialogDescription> */}
+      {/*           </DialogHeader> */}
+      {/*         </DialogContent> */}
+      {/*       </Dialog> */}
+      {/*     )} */}
+      {/*   </p> */}
+      {/* ) : ( */}
+      {/*   <p>{description}</p> */}
+      {/* )} */}
     </div>
   );
 };

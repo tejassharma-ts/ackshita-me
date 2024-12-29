@@ -139,7 +139,7 @@ export default function AboutPage() {
                 <span className="text-muted-foreground">TO HELP</span> BRANDS FIND THEIR TRIBE.
               </p>
               <Image
-                className="absolute bottom-0 right-0 translate-x-1/2 translate-y-1/2 grayscale hover:grayscale-0 duration-500 md:max-w-[10rem] md:translate-x-0 md:translate-y-[130%]"
+                className="absolute bottom-0 right-0 translate-x-1/2 translate-y-1/2 grayscale hover:grayscale-0 duration-500 md:max-w-[10rem] md:translate-x-0 md:translate-y-full"
                 src="/ak-circle-colour.png"
                 width={300}
                 height={300}

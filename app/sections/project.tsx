@@ -97,7 +97,7 @@ const Panel = ({ open, setOpen, id, title, imgSrc }: PanelProps) => {
           <div className="relative">
             <motion.h1
               layoutId={`title-${id}`}
-              className="font-dx text-[clamp(3rem,10vw,5rem)] whitespace-nowrap">
+              className="font-dx text-[clamp(3rem,10vw,10rem)] whitespace-nowrap">
               {title}
             </motion.h1>
             {isOpen ? <Link href={`/projects/${id}`} className="absolute inset-0" /> : null}

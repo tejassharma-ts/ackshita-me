@@ -49,7 +49,7 @@ export default function Promo() {
           )}
         />
 
-        <div className="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 text-[2.2vw] mix-blend-difference w-full max-w-7xl sm:max-w-[2rem]">
+        <div className="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 text-[2.2vw] mix-blend-difference w-full max-w-7xl sm:px-8 sm:text-[2.8vw]">
           <p className="text-center uppercase">
             Explore,{" "}
             {words.map((word, idx) => {

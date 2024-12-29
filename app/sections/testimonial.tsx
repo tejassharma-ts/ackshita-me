@@ -44,7 +44,7 @@ export default function Testimonial() {
   const x = useTransform(scrollYProgress, [0, 1], ["0%", "-100%"]);
 
   return (
-    <div ref={targetRef} className="h-[300vh]">
+    <div ref={targetRef} className="h-[300vh] sm:h-full">
       <Section className="sticky top-0 pb-0">
         <Container size="full">
           <div className="flex lg:flex-col gap-10 overflow-hidden">
@@ -107,9 +107,9 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({ name, title, content:
   };
 
   return (
-    <div className={`flex flex-col p-8 max-w-2xl text-2xl bg bg-[#01069E]`}>
+    <div className={`flex flex-col p-8 max-w-2xl text-2xl bg bg-[#01069E] sm:text-base`}>
       <div className="flex flex-col space-y-2 sm:mb-4">
-        <h1 className="text-4xl font-medium">{name}</h1>
+        <h1 className="text-4xl font-medium sm:text-3xl">{name}</h1>
         <p className="font-medium">{title}</p>
       </div>
       <p>{description}</p>

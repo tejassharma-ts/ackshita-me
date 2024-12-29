@@ -82,7 +82,7 @@ export default function About() {
               )}>
               <Link
                 href="/about"
-                className="text-lg uppercase underline underline-offset-4 font-medium">
+                className="text-lg uppercase underline underline-offset-4 font-medium sm:text-sm">
                 Know more
               </Link>
             </div>

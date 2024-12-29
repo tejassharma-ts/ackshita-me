@@ -24,7 +24,7 @@ export default function ProjectControls({ next, prev }: ProjectControlsProps) {
   return (
     <Section>
       <Container>
-        <div className="flex justify-between">
+        <div className="flex justify-between gap-20">
           <div className="flex flex-col space-y-4 relative">
             <h1 className="font-semibold">PREVIOUS</h1>
             <img

@@ -50,7 +50,7 @@ function ContentSection({
 }) {
   return (
     <div
-      className={`grid lg:grid-cols-2 items-center gap-10 md:grid-cols-1 ${reverse ? "md:flex-col-reverse" : ""}`}>
+      className={`grid grid-cols-2 items-center gap-10 md:grid-cols-1 ${reverse ? "md:flex-col-reverse" : ""}`}>
       <div className={reverse ? "order-1" : ""}>
         <h1 className="text-5xl font-medium">{title}</h1>
         <div className="mt-5 text-white/80 max-w-sm">{children}</div>
@@ -90,14 +90,14 @@ export default function AboutPage({ params }: AboutPageProps) {
                   duration: 0.4,
                 }}
                 layoutId={`title-${params.id}`}
-                className="text-6xl font-medium  font-dx z-50">
+                className="text-6xl font-medium  font-dx z-50 whitespace-nowrap">
                 {project.name}
               </motion.h1>
             </AnimatePresence>
           </div>
         </Container>
       </Section>
-      <Container className="relative h-full min-h-[600px]">
+      <Container className="relative h-full min-h-[600px] sm:min-h-full">
         <AnimatePresence>
           <motion.img
             layoutId={`project-${params.id}`}

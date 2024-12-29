@@ -28,7 +28,7 @@ const socialLinks = [
 ];
 export default function Footer({ className }: { className?: string }) {
   return (
-    <footer className={cn("mt-44 pb-10", className)}>
+    <footer className={cn("mt-44 pb-10 sm:mt-10", className)}>
       <div className="flex flex-col items-center  space-y-6">
         <p className="uppercase text-center font-medium">( need an unfair advantage? )</p>
         <h1 className="text-[10rem] md:text-[5rem] sm:text-[4.7rem] font-dx text-center uppercase">

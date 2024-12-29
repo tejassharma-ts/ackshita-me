@@ -48,7 +48,8 @@ export default function Promo() {
             ww === 100 && "rounded-none",
           )}
         />
-        <div className="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 text-[2.2vw] mix-blend-difference w-full max-w-7xl">
+
+        <div className="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 text-[2.2vw] mix-blend-difference w-full max-w-7xl sm:max-w-[2rem]">
           <p className="text-center uppercase">
             Explore,{" "}
             {words.map((word, idx) => {

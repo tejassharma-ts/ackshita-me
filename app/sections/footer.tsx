@@ -31,7 +31,7 @@ export default function Footer({ className }: { className?: string }) {
     <footer className={cn("mt-44 pb-10", className)}>
       <div className="flex flex-col items-center  space-y-6">
         <p className="uppercase text-center font-medium">( need an unfair advantage? )</p>
-        <h1 className="text-[10rem] font-dx text-center uppercase">
+        <h1 className="text-[10rem] md:text-[5rem] sm:text-[4.7rem] font-dx text-center uppercase">
           Let&apos;s make it <br />
           happen
         </h1>
@@ -40,7 +40,7 @@ export default function Footer({ className }: { className?: string }) {
         </Button>
       </div>
       <div className="mt-8 flex flex-col text-base">
-        <Container className="flex justify-between w-full" size="full">
+        <Container className="flex justify-between w-full flex-wrap gap-4" size="full">
           <p className="uppercase text-muted-foreground font-medium">
             based in india - working worldwide
           </p>
@@ -52,8 +52,8 @@ export default function Footer({ className }: { className?: string }) {
           </p>
         </Container>
         <Separator className="mt-6 mb-12" />
-        <Container className="flex justify-between w-full items-center" size="full">
-          <div className="w-1/3">
+        <Container className="flex justify-between w-full items-center md:flex-col gap-6 md:justify-center" size="full">
+          <div className="w-1/3 md:flex md:justify-center">
             <Logo />
           </div>
           <ul className="flex space-x-12 w-full justify-center text-white font-medium">
@@ -64,13 +64,13 @@ export default function Footer({ className }: { className?: string }) {
               </li>
             ))}
           </ul>
-          <div className="flex items-center space-x-1 w-1/3 justify-end text-muted-foreground font-medium ">
+          <div className="flex items-center space-x-1 w-1/3 justify-end text-muted-foreground font-medium md:w-full md:justify-center">
             <div className="flex flex-col">
-              <div className="uppercase flex items-center space-x-2 justify-end">
+              <div className="uppercase flex items-center space-x-2 justify-end md:justify-center">
                 <Icons.copyright size={14} />
                 <span>2024 Ackshita</span>
               </div>
-              <span className="uppercase">
+              <span className="uppercase whitespace-nowrap">
                 Made with︎ <Icons.love size={18} className="fill-white inline-block stroke-none" />{" "}
                 by DAK Designs
               </span>

@@ -39,7 +39,7 @@ export default function Menu() {
               key={link.title}
               onClick={() => setIsOpen(false)}
               className={cn(
-                "uppercase text-[4.7rem] font-extrabold cursor-pointer text-muted-foreground hover:text-white transition-colors relative",
+                "uppercase text-[4.7rem] sm:text-[3.5rem] font-extrabold cursor-pointer text-muted-foreground hover:text-white transition-colors relative",
                 {
                   "text-white": checkActiveNav(link.href),
                 },

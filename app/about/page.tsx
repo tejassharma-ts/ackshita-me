@@ -129,7 +129,7 @@ export default function AboutPage() {
         <Container>
           <div className="flex gap-8">
             <div className="relative">
-              <h1 className="text-[10rem] font-dx whitespace-nowrap">
+              <h1 className="text-[10rem] md:text-[5rem] sm:text-[4.7rem] font-dx whitespace-nowrap">
                 YOUR FAVOURITE <br />
                 BRAND DESIGNER
               </h1>
@@ -139,7 +139,7 @@ export default function AboutPage() {
                 <span className="text-muted-foreground">TO HELP</span> BRANDS FIND THEIR TRIBE.
               </p>
               <Image
-                className="absolute bottom-0 right-0 translate-x-1/2 translate-y-1/2 grayscale hover:grayscale-0 duration-500"
+                className="absolute bottom-0 right-0 translate-x-1/2 translate-y-1/2 grayscale hover:grayscale-0 duration-500 md:max-w-[10rem] md:translate-x-0 md:translate-y-[130%]"
                 src="/ak-circle-colour.png"
                 width={300}
                 height={300}
@@ -156,10 +156,10 @@ export default function AboutPage() {
       </Section>
       <Section className="pt-52">
         <Container>
-          <div className="flex justify-between">
+          <div className="flex justify-between gap-20 md:flex-col md:gap-0 md:items-center">
             <div className="flex flex-col">
               <div className="flex flex-col">
-                <h1 className="text-[10rem] font-dx">My story</h1>
+                <h1 className="text-[10rem] md:text-[5rem] sm:text-[4.7rem] font-dx">My story</h1>
                 <h3 className="text-2xl mt-4 font-medium">A BIT ABOUT ME</h3>
               </div>
               <div className="border-l pl-4 mt-14">
@@ -222,13 +222,15 @@ export default function AboutPage() {
               LARGER THAN THE PRODUCT BE IT THEIR VALUES OR PHILOSOPHY. HERE'S A BREAKDOWN OF THE
               KEY STEPS I FOLLOW TO CREATE SUCH A BRAND.
             </p>
-            <h1 className="text-[10rem] mt-4 font-dx whitespace-nowrap">APPROACH</h1>
+            <h1 className="text-[10rem] md:text-[5rem] sm:text-[4.7rem] mt-4 font-dx whitespace-nowrap">
+              APPROACH
+            </h1>
 
             <Accordion type="single" collapsible className="w-full mt-8">
               <AccordionItem value="item-1" className="border-white/50">
                 <AccordionTrigger className="py-8">
-                  <span className="size-12 rounded-full border-2 bg-transparent"></span>
-                  <span className="mr-auto text-3xl ml-8">BRAND STRATEGY</span>
+                  <span className="size-12 rounded-full border-2 bg-transparent shrink-0"></span>
+                  <span className="mr-auto text-3xl ml-8 sm:text-2xl">BRAND STRATEGY</span>
                 </AccordionTrigger>
                 <AccordionContent className="text-lg pl-[80px] flex flex-col gap-3">
                   <h3 className="font-bold underline">Understanding the brand</h3>
@@ -250,8 +252,8 @@ export default function AboutPage() {
 
               <AccordionItem value="item-2" className="border-white/50">
                 <AccordionTrigger className="py-8">
-                  <span className="size-12 rounded-full border-2 bg-transparent"></span>
-                  <span className="mr-auto text-3xl ml-8">BRAND IDENTITY DESIGN</span>
+                  <span className="size-12 rounded-full border-2 bg-transparent shrink-0"></span>
+                  <span className="mr-auto text-3xl ml-8 sm:text-2xl">BRAND IDENTITY DESIGN</span>
                 </AccordionTrigger>
                 <AccordionContent className="text-lg pl-[80px] flex flex-col gap-3">
                   <h3 className="font-bold underline">Understanding the brand</h3>

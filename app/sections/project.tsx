@@ -1,10 +1,9 @@
 "use client";
 
 import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
-import useWindowSize from "@/hooks/use-window-resize";
 import { projects } from "@/data";
 import { cn } from "@/lib/utils";
-import { motion, useInView, Variants } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import Link from "next/link";
 
 const VerticalAccordion = () => {
@@ -30,7 +29,7 @@ const VerticalAccordion = () => {
         <span className="text-4xl absolute left-1/2 -translate-x-1/2 translate-y-1/2">/</span>
         <span>0{projects.length}</span>
       </div>
-      <div className="flex flex-col lg:flex-row h-full w-full  shadow overflow-hidden gap-2">
+      <div className="flex flex-row h-full w-full shadow overflow-hidden gap-2">
         {items.map((item) => {
           return (
             <Panel
@@ -70,7 +69,7 @@ const Panel = ({ open, setOpen, id, title, imgSrc }: PanelProps) => {
           backgroundSize: "cover",
         }}
         className={cn(
-          "relative p-3 flex flex-row-reverse lg:flex-col justify-end items-center gap-8 group w-16 cursor-pointer transition-all duration-800 ease-accordion-project",
+          "relative p-3 flex flex-col justify-end items-center gap-8 group w-16 cursor-pointer transition-all duration-800 ease-accordion-project",
           isOpen && "w-full cursor-auto",
         )}
         onClick={() => setOpen(id)}>
@@ -106,46 +105,6 @@ const Panel = ({ open, setOpen, id, title, imgSrc }: PanelProps) => {
 };
 
 export default VerticalAccordion;
-
-const panelVariants: Variants = {
-  open: {
-    width: "100%",
-    height: "100%",
-    transition: {
-      duration: 0.8,
-    },
-  },
-  closed: {
-    width: "0%",
-    height: "100%",
-    transition: {
-      duration: 0.8,
-    },
-  },
-};
-
-const panelVariantsSm = {
-  open: {
-    width: "100%",
-    height: "200px",
-  },
-  closed: {
-    width: "100%",
-    height: "0px",
-  },
-};
-
-const descriptionVariants = {
-  open: {
-    opacity: 1,
-    y: "0%",
-    transition: {
-      ease: "easeIn",
-      delay: 0.125,
-    },
-  },
-  closed: { opacity: 0, y: "100%" },
-};
 
 const items = [
   {

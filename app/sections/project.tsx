@@ -23,7 +23,7 @@ const VerticalAccordion = () => {
   }, [isInView]);
 
   return (
-    <div ref={targetRef} className="h-screen flex flex-col md:h-[80vh]">
+    <div id="projects" ref={targetRef} className="h-screen flex flex-col md:h-[80vh]">
       <div className="bg-[#161310] flex justify-between text-8xl items-center pb-4 sm:text-4xl">
         <span>0{open}</span>
         <span className="text-4xl absolute left-1/2 -translate-x-1/2 translate-y-1/2 sm:-translate-y-0">

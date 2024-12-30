@@ -45,7 +45,7 @@ export default function Testimonial() {
 
   return (
     <div ref={targetRef} className="h-[300vh] sm:h-full">
-      <Section className="sticky top-0 pb-0 sm:pb-0">
+      <Section className="sticky top-20 pb-0 sm:pb-0">
         <Container size="full">
           <div className="flex lg:flex-col gap-10 overflow-hidden">
             <div className="bg-black  relative z-50 basis-1/6">
@@ -55,7 +55,7 @@ export default function Testimonial() {
             </div>
             <div className="flex-shrink-0 overflow-hidden w-full md:hidden">
               <motion.div style={{ x }} className="w-full">
-                <div className="flex flex-nowrap space-x-2">
+                <div className="flex flex-nowrap space-x-2 gap-2">
                   {testimonials.map((testimonial, index) => (
                     <TestimonialCard
                       key={index}

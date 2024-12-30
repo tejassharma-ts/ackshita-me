@@ -17,9 +17,9 @@ export default function ProjectControls({ next, prev }: ProjectControlsProps) {
   const pathname = usePathname();
   const lenis = useLenis();
 
-  useEffect(() => {
-    lenis?.scrollTo(0);
-  }, [pathname]);
+  // useEffect(() => {
+  //   lenis?.scrollTo(0);
+  // }, [pathname]);
 
   return (
     <Section>
@@ -32,7 +32,12 @@ export default function ProjectControls({ next, prev }: ProjectControlsProps) {
               className="w-80 h-40 object-cover object-center rounded-xl"
             />
             <p>{projects[prev].name}</p>
-            <Link scroll={false} href={`/projects/${prev + 1}`} className="absolute inset-0" />
+            <Link
+              scroll={false}
+              onClick={() => lenis?.scrollTo(0)}
+              href={`/projects/${prev + 1}`}
+              className="absolute inset-0"
+            />
           </div>
           <div className="flex flex-col space-y-4 text-right relative">
             <h1 className="font-semibold">NEXT</h1>
@@ -41,7 +46,12 @@ export default function ProjectControls({ next, prev }: ProjectControlsProps) {
               className="w-80 h-40 object-cover object-center rounded-xl"
             />
             <p>{projects[next].name}</p>
-            <Link scroll={false} href={`/projects/${next + 1}`} className="absolute inset-0" />
+            <Link
+              scroll={false}
+              href={`/projects/${next + 1}`}
+              onClick={() => lenis?.scrollTo(0)}
+              className="absolute inset-0"
+            />
           </div>
         </div>
       </Container>

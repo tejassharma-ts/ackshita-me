@@ -28,7 +28,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${dx.variable} ${dx.variable} ${fontSans.variable} ${fontSans.className} antialiased scrollbar-hide`}>
+      className={`${dx.variable} ${dx.variable} ${fontSans.variable} ${fontSans.className} antialiased scrollbar-hide scroll-smooth`}>
       <body>
         <Navbar />
         <LenisProvider>{children}</LenisProvider>

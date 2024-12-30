@@ -156,7 +156,7 @@ export default function AboutPage() {
       </Section>
       <Section className="pt-52">
         <Container>
-          <div className="flex justify-between gap-20 md:flex-col md:gap-0 md:items-center">
+          <div className="flex justify-between gap-20 md:flex-col md:items-center">
             <div className="flex flex-col">
               <div className="flex flex-col">
                 <h1 className="text-[10rem] md:text-[5rem] sm:text-[4.7rem] font-dx">My story</h1>
@@ -202,7 +202,7 @@ export default function AboutPage() {
                 </div>
               </div>
             </div>
-            <div className="sticky top-32 h-fit mt-32">
+            <div className="sticky top-0 h-fit">
               <Image
                 src="/ak-standing.png"
                 className="hover:-scale-x-[100%]"

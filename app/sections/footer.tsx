@@ -52,7 +52,9 @@ export default function Footer({ className }: { className?: string }) {
           </p>
         </Container>
         <Separator className="mt-6 mb-12 sm:mt-12" />
-        <Container className="flex justify-between w-full items-center md:flex-col gap-6 md:justify-center" size="full">
+        <Container
+          className="flex justify-between w-full items-center md:flex-col gap-6 md:justify-center"
+          size="full">
           <div className="w-1/3 md:flex md:justify-center">
             <Logo />
           </div>
@@ -78,6 +80,7 @@ export default function Footer({ className }: { className?: string }) {
           </div>
         </Container>
       </div>
+      <div id="contact" />
     </footer>
   );
 }

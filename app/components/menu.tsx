@@ -18,11 +18,11 @@ const links = [
   },
   {
     title: "projects",
-    href: "/projects",
+    href: "#projects",
   },
   {
     title: "Contact",
-    href: "/contact",
+    href: "#contact",
   },
 ];
 
@@ -45,7 +45,11 @@ export default function Menu() {
                 },
               )}>
               {link.title}
-              <Link href={link.href} className="absolute inset-0" />
+              {link.href.startsWith("#") ? (
+                <a href={link.href} className="absolute inset-0" />
+              ) : (
+                <Link href={link.href} className="absolute inset-0" />
+              )}
             </li>
           ))}
         </ul>

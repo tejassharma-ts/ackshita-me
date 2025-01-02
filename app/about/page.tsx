@@ -199,10 +199,22 @@ export default function AboutPage() {
                       </p>
                     </div>
                   </FadeIn>
+                  <FadeIn>
+                    <div className="relative flex flex-col space-y-4 before:absolute before:h-full before:bg-white before:w-1 before:-left-4 before:-translate-x-1/2 before:rounded-full font-medium">
+                      <h1 className="text-4xl font-semibold">My Goal.</h1>
+                      <p>
+                        To create more than just brands. I’m here to build communities, forge
+                        genuine connections, and help brands find and cultivate their loyal tribe.
+                        I’m excited to partner with those who are ready to break boundaries and
+                        embrace fresh perspectives. If you’re ready to inspire action and stand
+                        apart, let’s make it happen.
+                      </p>
+                    </div>
+                  </FadeIn>
                 </div>
               </div>
             </div>
-            <div className="sticky top-0 h-fit">
+            <div className="sticky top-[20%] h-fit">
               <Image
                 src="/ak-standing.png"
                 className="hover:-scale-x-[100%]"

@@ -10,20 +10,12 @@ import Logo from "../components/logo";
 
 const socialLinks = [
   {
-    title: "Dribble",
-    href: "#",
-  },
-  {
-    title: "Behance",
-    href: "#",
-  },
-  {
     title: "LinkedIn",
-    href: "#",
+    href: "https://www.linkedin.com/in/ackshita/",
   },
   {
-    title: "X",
-    href: "#",
+    title: "Instagram",
+    href: "https://www.instagram.com/ackshita/",
   },
 ];
 export default function Footer({ className }: { className?: string }) {

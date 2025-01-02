@@ -55,13 +55,13 @@ export default function Menu() {
         </ul>
         <SheetFooter className="flex mt-auto text-lg flex-col items-center space-y-6 absolute bottom-8 text-white font-medium">
           <div className="flex space-x-4">
-            <a href="#" className="uppercase underline underline-offset-4">
+            <a href="mailto:acks14sen@gmail.com" className="uppercase underline underline-offset-4">
               Email
             </a>
-            <a href="#" className="uppercase underline underline-offset-4">
+            <a href="https://www.instagram.com/ackshita/" className="uppercase underline underline-offset-4">
               Instagram
             </a>
-            <a href="#" className="uppercase underline underline-offset-4">
+            <a href="https://www.linkedin.com/in/ackshita/" className="uppercase underline underline-offset-4">
               Linkedin
             </a>
           </div>

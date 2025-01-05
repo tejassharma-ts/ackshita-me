@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import LenisProvider from "./providers/smooth-scroll";
 import "./globals.css";
+import { Toaster } from "@/components/ui/sonner";
 import Navbar from "./components/navbar";
 import { Footer } from "./sections";
 
@@ -32,7 +33,12 @@ export default function RootLayout({
       <body>
         <Navbar />
         <LenisProvider>{children}</LenisProvider>
-        {/* <Footer /> */}
+        <Toaster
+          toastOptions={{
+            style: {},
+            className: "rounded-sm text-base font-main border-primary bg-primary text-white font-dx",
+          }}
+        />
       </body>
     </html>
   );

@@ -1,109 +1,119 @@
 "use client";
 
+import { useRef } from "react";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import Container from "../components/container";
 import { FadeIn } from "../components/fade-in";
 import Section from "../components/section";
 import { Footer } from "../sections";
 
+const brandUnderstandingSteps = [
+  {
+    title: "Talk to management",
+    description:
+      "to understand their mission, vision, business goals, and most importantly what made them want to take this step.",
+  },
+  {
+    title: "Talk to internal Stakeholders",
+    description:
+      "to understand the brand's points of alignment and dissonance with its goal/mission.",
+  },
+  {
+    title: "Conduct a competitive audit",
+    description: "where we understand how the brand can differentiate ourselves.",
+  },
+  {
+    title: "Conduct a cultural audit",
+    description:
+      "to understand the sentiment towards topics relating to the brand and what are some trends that are arising in culture that could impact the brand.",
+  },
+  {
+    title: "Visual Audit",
+    description:
+      "How does the brand compare to the rest of the competition on a visual level and understand the visual trends within the product category.",
+  },
+];
+
+const brandCoreAttributes = [
+  {
+    title: "Brand's Purpose",
+    description: "Mission, Vission, Purpose statement.",
+  },
+  {
+    title: "Brand values",
+    description: "what are  values the brand stands for and doesn’t stand for.",
+  },
+  {
+    title: "Brand persona",
+    description: "What is the attitude that this brand carries.",
+  },
+  {
+    title: "Audience Persona",
+    description: "defining the audience they need to talk to that would yield the best results.",
+  },
+];
+
+const brandIUnderstandingSteps = [
+  {
+    title: "Talk to management",
+    description:
+      "to understand their mission, vision, business goals, and most importantly what made them want to take this step.",
+  },
+  {
+    title: "Talk to internal Stakeholders",
+    description:
+      "to understand the brand's points of alignment and dissonance with its goal/mission.",
+  },
+  {
+    title: "Conduct a competitive audit",
+    description: "where we understand how the brand can differentiate ourselves.",
+  },
+  {
+    title: "Conduct a cultural audit",
+    description:
+      "to understand the sentiment towards topics relating to the brand and what are some trends that are arising in culture that could impact the brand.",
+  },
+  {
+    title: "Visual Audit",
+    description:
+      "How does the brand compare to the rest of the competition on a visual level and understand the visual trends within the product category.",
+  },
+];
+
+const brandICoreAttributes = [
+  {
+    title: "Brand's Purpose",
+    description: "Mission, Vission, Purpose statement.",
+  },
+  {
+    title: "Brand values",
+    description: "what are  values the brand stands for and doesn’t stand for.",
+  },
+  {
+    title: "Brand persona",
+    description: "What is the attitude that this brand carries.",
+  },
+  {
+    title: "Audience Persona",
+    description: "defining the audience they need to talk to that would yield the best results.",
+  },
+];
+
 export default function AboutPage() {
-  const brandUnderstandingSteps = [
-    {
-      title: "Talk to management",
-      description:
-        "to understand their mission, vision, business goals, and most importantly what made them want to take this step.",
-    },
-    {
-      title: "Talk to internal Stakeholders",
-      description:
-        "to understand the brand's points of alignment and dissonance with its goal/mission.",
-    },
-    {
-      title: "Conduct a competitive audit",
-      description: "where we understand how the brand can differentiate ourselves.",
-    },
-    {
-      title: "Conduct a cultural audit",
-      description:
-        "to understand the sentiment towards topics relating to the brand and what are some trends that are arising in culture that could impact the brand.",
-    },
-    {
-      title: "Visual Audit",
-      description:
-        "How does the brand compare to the rest of the competition on a visual level and understand the visual trends within the product category.",
-    },
-  ];
+  const targetRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: targetRef,
+    offset: ["start start", "end end"],
+  });
 
-  const brandCoreAttributes = [
-    {
-      title: "Brand's Purpose",
-      description: "Mission, Vission, Purpose statement.",
-    },
-    {
-      title: "Brand values",
-      description: "what are  values the brand stands for and doesn’t stand for.",
-    },
-    {
-      title: "Brand persona",
-      description: "What is the attitude that this brand carries.",
-    },
-    {
-      title: "Audience Persona",
-      description: "defining the audience they need to talk to that would yield the best results.",
-    },
-  ];
-
-  const brandIUnderstandingSteps = [
-    {
-      title: "Talk to management",
-      description:
-        "to understand their mission, vision, business goals, and most importantly what made them want to take this step.",
-    },
-    {
-      title: "Talk to internal Stakeholders",
-      description:
-        "to understand the brand's points of alignment and dissonance with its goal/mission.",
-    },
-    {
-      title: "Conduct a competitive audit",
-      description: "where we understand how the brand can differentiate ourselves.",
-    },
-    {
-      title: "Conduct a cultural audit",
-      description:
-        "to understand the sentiment towards topics relating to the brand and what are some trends that are arising in culture that could impact the brand.",
-    },
-    {
-      title: "Visual Audit",
-      description:
-        "How does the brand compare to the rest of the competition on a visual level and understand the visual trends within the product category.",
-    },
-  ];
-
-  const brandICoreAttributes = [
-    {
-      title: "Brand's Purpose",
-      description: "Mission, Vission, Purpose statement.",
-    },
-    {
-      title: "Brand values",
-      description: "what are  values the brand stands for and doesn’t stand for.",
-    },
-    {
-      title: "Brand persona",
-      description: "What is the attitude that this brand carries.",
-    },
-    {
-      title: "Audience Persona",
-      description: "defining the audience they need to talk to that would yield the best results.",
-    },
-  ];
+  const height = useTransform(scrollYProgress, [0, 0.8], ["0", "100%"]);
 
   return (
     <>
@@ -154,7 +164,7 @@ export default function AboutPage() {
           </div>
         </Container>
       </Section>
-      <Section className="pt-52">
+      <Section ref={targetRef} className="pt-52">
         <Container>
           <div className="flex justify-between gap-20 md:flex-col md:items-center">
             <div className="flex flex-col">
@@ -215,9 +225,16 @@ export default function AboutPage() {
               </div>
             </div>
             <div className="sticky top-[20%] h-fit">
-              <Image
+              <Image src="/ak-standing.png" width={400} height={400} alt="ak-standing" />
+              <motion.img
+                style={{ height }}
+                animate={{
+                  transition: {
+                    ease: [0.47, 0, 0, 1],
+                  },
+                }}
                 src="/ak-standing.png"
-                className="hover:-scale-x-[100%]"
+                className="-scale-x-[100%] absolute bottom-0 object-cover origin-bottom"
                 width={400}
                 height={400}
                 alt="ak-standing"

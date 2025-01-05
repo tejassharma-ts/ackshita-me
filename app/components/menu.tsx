@@ -5,6 +5,8 @@ import useCheckActiveNav from "@/hooks/use-check-active-link";
 import { Sheet, SheetContent, SheetFooter, SheetTrigger } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
+import { CopyToClipboard } from "react-copy-to-clipboard";
+import { toast } from "sonner";
 import { Icons } from "./icons";
 
 const links = [
@@ -22,7 +24,7 @@ const links = [
   },
   {
     title: "Contact",
-    href: "#contact",
+    href: "mailto:acks14sen@gmail.com",
   },
 ];
 
@@ -55,13 +57,18 @@ export default function Menu() {
         </ul>
         <SheetFooter className="flex mt-auto text-lg flex-col items-center space-y-6 absolute bottom-8 text-white font-medium">
           <div className="flex space-x-4">
-            <a href="mailto:acks14sen@gmail.com" className="uppercase underline underline-offset-4">
-              Email
-            </a>
-            <a href="https://www.instagram.com/ackshita/" className="uppercase underline underline-offset-4">
+            <CopyToClipboard text={"acks14sen@gmail.com"} onCopy={() => toast("Email copied. You're good to go!")}>
+              <span className="uppercase underline underline-offset-4 cursor-pointer">Email</span>
+            </CopyToClipboard>
+
+            <a
+              href="https://www.instagram.com/ackshita/"
+              className="uppercase underline underline-offset-4">
               Instagram
             </a>
-            <a href="https://www.linkedin.com/in/ackshita/" className="uppercase underline underline-offset-4">
+            <a
+              href="https://www.linkedin.com/in/ackshita/"
+              className="uppercase underline underline-offset-4">
               Linkedin
             </a>
           </div>

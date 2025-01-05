@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { cn } from "@/lib/utils";
 import Container from "../components/container";
@@ -27,9 +27,14 @@ export default function Footer({ className }: { className?: string }) {
           Let&apos;s make it <br />
           happen
         </h1>
-        <Button className="uppercase py-6 px-8 font-semibold mt-8" variant="outline">
+        <a
+          href="mailto:acks14sen@gmail.com"
+          className={cn(
+            buttonVariants({ variant: "outline" }),
+            "uppercase py-6 px-8 font-semibold mt-8",
+          )}>
           connect with me
-        </Button>
+        </a>
       </div>
       <div className="mt-8 flex flex-col text-base">
         <Container className="flex justify-between w-full flex-wrap gap-4" size="full">

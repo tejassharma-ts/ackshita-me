@@ -41,9 +41,11 @@ export default function Hero() {
             <h1 className="text-[clamp(5rem,5vw,15rem)]   mb-[4%] bg-gradient-to-r from-white to-white/50 bg-clip-text text-transparent">
               That
             </h1>
-            <h1 className="text-[clamp(5rem,12vw,15rem)] mb-[4%] bg-gradient-to-r from-white to-white/50 bg-clip-text text-transparent whitespace-nowrap">
-              <motion.span style={{ opacity: fadeOut }}>SOLVES</motion.span>
-            </h1>
+            <motion.h1
+              style={{ opacity: fadeOut }}
+              className="text-[clamp(5rem,12vw,15rem)] mb-[4%] bg-gradient-to-r from-white to-white/50 bg-clip-text text-transparent whitespace-nowrap">
+              SOLVES
+            </motion.h1>
 
             <motion.div style={{ opacity: fadeIn }} className="absolute top-0">
               <h1 className=" text-[clamp(9.5rem,12vw,30rem)] bg-gradient-to-r from-white to-white/50 bg-clip-text text-transparent ">

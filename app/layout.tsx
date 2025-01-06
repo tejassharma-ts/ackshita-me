@@ -29,14 +29,15 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${dx.variable} ${dx.variable} ${fontSans.variable} ${fontSans.className} antialiased scrollbar-hide scroll-smooth`}>
+      className={`${dx.variable} ${dx.variable} ${fontSans.variable} ${fontSans.className} antialiased scrollbar-hide`}>
       <body>
         <Navbar />
         <LenisProvider>{children}</LenisProvider>
         <Toaster
           toastOptions={{
             style: {},
-            className: "rounded-sm text-base font-main border-primary bg-primary text-white font-dx",
+            className:
+              "rounded-sm text-base font-main border-primary bg-primary text-white font-dx",
           }}
         />
       </body>

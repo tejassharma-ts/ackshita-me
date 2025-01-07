@@ -118,7 +118,11 @@ export default function AboutPage({ params }: AboutPageProps) {
                 <div className="flex flex-col space-y-2 text-base border-b pb-6 border-[#686868]">
                   <h2 className="uppercase text-lg">{content.title}</h2>
                   <p className="font-medium leading-7">{content.content}</p>
-                  {content.extra ? <p className="font-medium leading-7">{content.extra}</p> : null}
+                  {"extra" in content ? (
+                    content.extra ? (
+                      <p className="font-medium leading-7">{content.extra}</p>
+                    ) : null
+                  ) : null}
                 </div>
               ))}
             </div>

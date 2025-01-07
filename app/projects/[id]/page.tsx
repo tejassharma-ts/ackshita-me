@@ -155,7 +155,7 @@ export default function AboutPage({ params }: AboutPageProps) {
           {/* </Container> */}
           {prefix ? (
             <ResponsiveMasonry columnsCountBreakPoints={{ 750: 2, 900: 3 }}>
-              <Masonry gutter={30}>
+              <Masonry gutter="1.5rem">
                 {Array.from({ length: 12 }).map((_, idx) => (
                   <img src={`/${prefix}-imgs/${prefix}-${idx + 1}.png`} />
                 ))}

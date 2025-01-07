@@ -7,6 +7,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { PageNotFoundError } from "next/dist/shared/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
+import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 import Container from "../../components/container";
 import Section from "../../components/section";
 import ProjectControls from "../components/project-controls";
@@ -78,6 +79,7 @@ export default function AboutPage({ params }: AboutPageProps) {
   const prev = projectID ? projectID - 1 : projects.length - 1;
   const next = projectID === projects.length - 1 ? 0 : projectID + 1;
 
+  const prefix = projects[projectID].prefix;
   return (
     <>
       <Section>
@@ -110,34 +112,52 @@ export default function AboutPage({ params }: AboutPageProps) {
       </Container>
       <Section>
         <Container>
-          <article className="prose prose-h2:text-white prose-p:text-white">
-            <div className="max-w-3xl flex flex-col">{project.desc}</div>
+          <article>
+            <div className="flex flex-col space-y-6">
+              {project.content.map((content) => (
+                <div className="flex flex-col space-y-2 text-base border-b pb-6 border-[#686868]">
+                  <h2 className="uppercase text-lg">{content.title}</h2>
+                  <p className="font-medium leading-7">{content.content}</p>
+                  {content.extra ? <p className="font-medium leading-7">{content.extra}</p> : null}
+                </div>
+              ))}
+            </div>
+            {/* <div className="max-w-3xl flex flex-col">{project.desc}</div> */}
           </article>
         </Container>
         <Section>
-          <Container>
-            <div className="grid gap-10">
-              <ContentSection
-                title="LOGO DESIGN"
-                imageUrl="https://images.pexels.com/photos/27750569/pexels-photo-27750569/free-photo-of-model-in-black-tube-top-and-leggings-holding-her-hat.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                imageAlt="client-portfolio">
-                <p>
-                  A bit about me A great brand identifies and cultivates a loyal tribe of people
-                  based on a connection larger than the product be it their values or philosophy.
-                </p>
-              </ContentSection>
-
-              <ContentSection
-                title="LABEL DESIGN"
-                imageUrl="https://images.pexels.com/photos/27750569/pexels-photo-27750569/free-photo-of-model-in-black-tube-top-and-leggings-holding-her-hat.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                imageAlt="client-portfolio">
-                <p>
-                  A bit about me A great brand identifies and cultivates a loyal tribe of people
-                  based on a connection larger than the product be it their values or philosophy.
-                </p>
-              </ContentSection>
-            </div>
-          </Container>
+          {/* <Container> */}
+          {/*   <div className="grid gap-10"> */}
+          {/*     <ContentSection */}
+          {/*       title="LOGO DESIGN" */}
+          {/*       imageUrl="https://images.pexels.com/photos/27750569/pexels-photo-27750569/free-photo-of-model-in-black-tube-top-and-leggings-holding-her-hat.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" */}
+          {/*       imageAlt="client-portfolio"> */}
+          {/*       <p> */}
+          {/*         A bit about me A great brand identifies and cultivates a loyal tribe of people */}
+          {/*         based on a connection larger than the product be it their values or philosophy. */}
+          {/*       </p> */}
+          {/*     </ContentSection> */}
+          {/**/}
+          {/*     <ContentSection */}
+          {/*       title="LABEL DESIGN" */}
+          {/*       imageUrl="https://images.pexels.com/photos/27750569/pexels-photo-27750569/free-photo-of-model-in-black-tube-top-and-leggings-holding-her-hat.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" */}
+          {/*       imageAlt="client-portfolio"> */}
+          {/*       <p> */}
+          {/*         A bit about me A great brand identifies and cultivates a loyal tribe of people */}
+          {/*         based on a connection larger than the product be it their values or philosophy. */}
+          {/*       </p> */}
+          {/*     </ContentSection> */}
+          {/*   </div> */}
+          {/* </Container> */}
+          {prefix ? (
+            <ResponsiveMasonry columnsCountBreakPoints={{ 750: 2, 900: 3 }}>
+              <Masonry gutter={30}>
+                {Array.from({ length: 12 }).map((_, idx) => (
+                  <img src={`/${prefix}-imgs/${prefix}-${idx + 1}.png`} />
+                ))}
+              </Masonry>
+            </ResponsiveMasonry>
+          ) : null}
         </Section>
         <ProjectControls next={next} prev={prev} />
       </Section>

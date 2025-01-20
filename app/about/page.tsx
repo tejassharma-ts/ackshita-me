@@ -107,13 +107,13 @@ const brandICoreAttributes = [
 ];
 
 export default function AboutPage() {
-  const targetRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: targetRef,
-    offset: ["start start", "end end"],
-  });
+  // const targetRef = useRef(null);
+  // const { scrollYProgress } = useScroll({
+  //   target: targetRef,
+  //   offset: ["start start", "end end"],
+  // });
 
-  const height = useTransform(scrollYProgress, [0, 0.8], ["0", "100%"]);
+  // const height = useTransform(scrollYProgress, [0, 0.8], ["0", "100%"]);
 
   return (
     <>
@@ -145,7 +145,7 @@ export default function AboutPage() {
               </h1>
               <p className="mt-8 max-w-md">
                 <span className="text-muted-foreground">I AM A </span> BRAND STRATEGIST{" "}
-                <span className="text-muted-foreground">WHO</span> LEVERAGES HUMAN INSIGHTS.{" "}
+                <span className="text-muted-foreground">WHO</span> LEVERAGES HUMAN INSIGHTS{" "}
                 <span className="text-muted-foreground">TO HELP</span> BRANDS FIND THEIR TRIBE.
               </p>
               <Image
@@ -164,7 +164,7 @@ export default function AboutPage() {
           </div>
         </Container>
       </Section>
-      <Section ref={targetRef} className="pt-52">
+      <Section /* ref={targetRef} */ className="pt-52">
         <Container>
           <div className="flex justify-between gap-20 md:flex-col md:items-center">
             <div className="flex flex-col">
@@ -209,36 +209,24 @@ export default function AboutPage() {
                       </p>
                     </div>
                   </FadeIn>
-                  <FadeIn>
-                    <div className="relative flex flex-col space-y-4 before:absolute before:h-full before:bg-white before:w-1 before:-left-4 before:-translate-x-1/2 before:rounded-full font-medium">
-                      <h1 className="text-4xl font-semibold">My Goal.</h1>
-                      <p>
-                        To create more than just brands. I’m here to build communities, forge
-                        genuine connections, and help brands find and cultivate their loyal tribe.
-                        I’m excited to partner with those who are ready to break boundaries and
-                        embrace fresh perspectives. If you’re ready to inspire action and stand
-                        apart, let’s make it happen.
-                      </p>
-                    </div>
-                  </FadeIn>
                 </div>
               </div>
             </div>
             <div className="sticky top-[20%] h-fit">
               <Image src="/ak-standing.png" width={400} height={400} alt="ak-standing" />
-              <motion.img
-                style={{ height }}
-                animate={{
-                  transition: {
-                    ease: [0.47, 0, 0, 1],
-                  },
-                }}
-                src="/ak-standing.png"
-                className="-scale-x-[100%] absolute bottom-0 object-cover origin-bottom"
-                width={400}
-                height={400}
-                alt="ak-standing"
-              />
+              {/* <motion.img */}
+              {/*   style={{ height }} */}
+              {/*   animate={{ */}
+              {/*     transition: { */}
+              {/*       ease: [0.47, 0, 0, 1], */}
+              {/*     }, */}
+              {/*   }} */}
+              {/*   src="/ak-standing.png" */}
+              {/*   className="-scale-x-[100%] absolute bottom-0 object-cover origin-bottom" */}
+              {/*   width={400} */}
+              {/*   height={400} */}
+              {/*   alt="ak-standing" */}
+              {/* /> */}
             </div>
           </div>
         </Container>

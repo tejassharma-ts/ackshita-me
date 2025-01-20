@@ -2,6 +2,7 @@ export const projects = [
   {
     name: "LLMA",
     mainImgSrc: "/project-sample.png",
+    service: "Brand Strategy & Postioning",
     content: [
       {
         title: "Clients",
@@ -28,6 +29,7 @@ export const projects = [
     clients: ["Amudhu Snacks Co."],
     org: ["Sai Kirupa Special School"],
     projectType: "Logo Design",
+    service: "Logo Design",
     challenge: "How do we produce brand assets that are cost-effective and easy to reproduce?",
     content: [
       {
@@ -53,6 +55,7 @@ export const projects = [
     prefix: "hy-veg",
     name: "HyVeg",
     mainImgSrc: "/projects/hy-veg.png",
+    service: "Rebranding",
     content: [
       {
         title: "Clients",

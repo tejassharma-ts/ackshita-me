@@ -32,15 +32,16 @@ const VerticalAccordion = () => {
         <span>0{projects.length}</span>
       </div>
       <div className="flex flex-row h-full w-full shadow overflow-hidden gap-2">
-        {items.map((item) => {
+        {projects.map((project, idx) => {
           return (
             <Panel
-              key={item.id}
+              key={idx + 1}
               open={open}
               setOpen={setOpen}
-              id={item.id}
-              title={item.title}
-              imgSrc={item.imgSrc}
+              id={idx + 1}
+              title={project.name}
+              service={project.service}
+              imgSrc={project.mainImgSrc}
             />
           );
         })}
@@ -55,9 +56,10 @@ interface PanelProps {
   id: number;
   title: string;
   imgSrc: string;
+  service: string;
 }
 
-const Panel = ({ open, setOpen, id, title, imgSrc }: PanelProps) => {
+const Panel = ({ open, setOpen, id, title, imgSrc, service }: PanelProps) => {
   const isOpen = open === id;
 
   return (
@@ -93,7 +95,7 @@ const Panel = ({ open, setOpen, id, title, imgSrc }: PanelProps) => {
             "scale-110 opacity-0 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 flex flex-col space-y-4 text-center duration-200",
             isOpen && "transition-[transform_opacity] delay-700 opacity-100 scale-100",
           )}>
-          <p className="font-semibold text-lg">Origanization Name</p>
+          <p className="font-semibold text-lg">{service}</p>
           <div className="relative">
             <motion.h1
               layoutId={`title-${id}`}

@@ -14,12 +14,7 @@ type ProjectControlsProps = {
 };
 
 export default function ProjectControls({ next, prev }: ProjectControlsProps) {
-  const pathname = usePathname();
   const lenis = useLenis();
-
-  // useEffect(() => {
-  //   lenis?.scrollTo(0);
-  // }, [pathname]);
 
   return (
     <Section>
@@ -34,7 +29,7 @@ export default function ProjectControls({ next, prev }: ProjectControlsProps) {
             <p>{projects[prev].name}</p>
             <Link
               scroll={false}
-              onClick={() => lenis?.scrollTo(0)}
+              onClick={() => lenis?.scrollTo(0, { immediate: true })}
               href={`/projects/${prev + 1}`}
               className="absolute inset-0"
             />
@@ -49,7 +44,8 @@ export default function ProjectControls({ next, prev }: ProjectControlsProps) {
             <Link
               scroll={false}
               href={`/projects/${next + 1}`}
-              onClick={() => lenis?.scrollTo(0)}
+              onClick={() => lenis?.scrollTo(0, { immediate: true })}
+              // onClick={() => window.scrollTo(0, 0)}
               className="absolute inset-0"
             />
           </div>

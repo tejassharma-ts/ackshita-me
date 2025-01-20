@@ -10,7 +10,7 @@ type BrandStrategyCardProps = {
 function BrandStrategyCard({ imageUrl, title, description }: BrandStrategyCardProps) {
   return (
     <div className="flex flex-col">
-      <div className="w-full bg-gray-500 aspect-square h-full">
+      <div className="w-full bg-white/95 aspect-square h-full">
         <img src={imageUrl} alt={title} className="h-full w-full max-w-full object-contain" />
       </div>
       <div className="mt-8 flex flex-col h-full space-y-4">

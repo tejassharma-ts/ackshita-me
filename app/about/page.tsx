@@ -67,11 +67,6 @@ const brandIUnderstandingSteps = [
       "to understand their mission, vision, business goals, and most importantly what made them want to take this step.",
   },
   {
-    title: "Talk to internal Stakeholders",
-    description:
-      "to understand the brand's points of alignment and dissonance with its goal/mission.",
-  },
-  {
     title: "Conduct a competitive audit",
     description: "where we understand how the brand can differentiate ourselves.",
   },
@@ -83,26 +78,21 @@ const brandIUnderstandingSteps = [
   {
     title: "Visual Audit",
     description:
-      "How does the brand compare to the rest of the competition on a visual level and understand the visual trends within the product category.",
+      " How does the brand compare to the rest of the competition on a visual level and understand the visual trends within the product.",
   },
 ];
 
 const brandICoreAttributes = [
   {
-    title: "Brand's Purpose",
-    description: "Mission, Vission, Purpose statement.",
+    title: "Deciding a direction",
+    description:
+      "based on the “understanding the brand phase” that Develop key elements like logo, colour palette, typography etc.",
   },
   {
-    title: "Brand values",
-    description: "what are  values the brand stands for and doesn’t stand for.",
+    description: "Expand the design into brand patterns and other assets.",
   },
   {
-    title: "Brand persona",
-    description: "What is the attitude that this brand carries.",
-  },
-  {
-    title: "Audience Persona",
-    description: "defining the audience they need to talk to that would yield the best results.",
+    description: "Put together brand guidelines that outline the use of all of the brand assets.",
   },
 ];
 
@@ -246,7 +236,9 @@ export default function AboutPage() {
             <Accordion type="single" collapsible className="w-full mt-8">
               <AccordionItem value="item-1" className="border-white/50">
                 <AccordionTrigger className="py-8">
-                  <span className="size-12 rounded-full border-2 bg-transparent shrink-0"></span>
+                  <span className="size-12 rounded-full border-2 bg-transparent shrink-0">
+                    <img src="/services/service-1.png" className="h-full w-full" />
+                  </span>
                   <span className="mr-auto text-3xl ml-8 sm:text-2xl">BRAND STRATEGY</span>
                 </AccordionTrigger>
                 <AccordionContent className="text-lg pl-[80px] flex flex-col gap-3">
@@ -269,7 +261,9 @@ export default function AboutPage() {
 
               <AccordionItem value="item-2" className="border-white/50">
                 <AccordionTrigger className="py-8">
-                  <span className="size-12 rounded-full border-2 bg-transparent shrink-0"></span>
+                  <span className="size-12 rounded-full border-2 bg-transparent shrink-0">
+                    <img src="/services/service-2.png" className="h-full w-full" />
+                  </span>
                   <span className="mr-auto text-3xl ml-8 sm:text-2xl">BRAND IDENTITY DESIGN</span>
                 </AccordionTrigger>
                 <AccordionContent className="text-lg pl-[80px] flex flex-col gap-3">

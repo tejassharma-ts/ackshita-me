@@ -240,10 +240,19 @@ function LLMLayout() {
           </div>
 
           <div className="flex md:flex-col md:gap-10 [&_img]:w-full [&_img]:h-full [&_img]:aspect-square md:[&_img]:aspect-auto [&_img]:object-contain">
-            <img src="/llma/news-1.png" />
-            <img src="/llma/news-2.png" />
-            <img src="/llma/news-3.png" />
-            <img src="/llma/news-4.png" />
+            {/* Creating f**ing div wrapper for img because of chrome (images get overflowed won't shrink their size even it is a children of flex*/}
+            <div>
+              <img src="/llma/news-1.png" />
+            </div>
+            <div>
+              <img src="/llma/news-2.png" />
+            </div>
+            <div>
+              <img src="/llma/news-3.png" />
+            </div>
+            <div>
+              <img src="/llma/news-4.png" />
+            </div>
           </div>
         </div>
 
@@ -255,15 +264,25 @@ function LLMLayout() {
 
           <div className="flex flex-col gap-6">
             <div className="flex gap-4 md:flex-col">
-              <img src="/llma/museum-1.png" className="w-full h-full" />
-              <img src="/llma/museum-2.png" className="w-full h-full" />
+              <div>
+                <img src="/llma/museum-1.png" className="w-full h-full" />
+              </div>
+              <div>
+                <img src="/llma/museum-2.png" className="w-full h-full" />
+              </div>
             </div>
 
             <div className="flex gap-14 md:flex-col">
               <div className="flex gap-4">
-                <img src="/llma/info-1.png" className="w-full h-full" />
-                <img src="/llma/info-2.png" className="w-full h-full" />
-                <img src="/llma/info-3.png" className="w-full h-full" />
+                <div>
+                  <img src="/llma/info-1.png" className="w-full h-full" />
+                </div>
+                <div>
+                  <img src="/llma/info-2.png" className="w-full h-full" />
+                </div>
+                <div>
+                  <img src="/llma/info-3.png" className="w-full h-full" />
+                </div>
               </div>
               <div className="flex items-center justify-center text-3xl text-left">
                 <h1 className=" max-w-xl">
@@ -273,15 +292,25 @@ function LLMLayout() {
             </div>
 
             <div className="flex gap-4 md:flex-col">
-              <img src="/llma/museum-3.png" className="w-full h-full" />
-              <img src="/llma/museum-4.png" className="w-full h-full" />
+              <div>
+                <img src="/llma/museum-3.png" className="w-full h-full" />
+              </div>
+              <div>
+                <img src="/llma/museum-4.png" className="w-full h-full" />
+              </div>
             </div>
 
             <div className="flex gap-14 flex-row-reverse md:flex-col">
               <div className="flex gap-4">
-                <img src="/llma/info-4.png" className="w-full h-full" />
-                <img src="/llma/info-5.png" className="w-full h-full" />
-                <img src="/llma/info-6.png" className="w-full h-full" />
+                <div>
+                  <img src="/llma/info-4.png" className="w-full h-full" />
+                </div>
+                <div>
+                  <img src="/llma/info-5.png" className="w-full h-full" />
+                </div>
+                <div>
+                  <img src="/llma/info-6.png" className="w-full h-full" />
+                </div>
               </div>
               <div className="flex items-center justify-center text-3xl text-left">
                 <h1 className=" max-w-xl">

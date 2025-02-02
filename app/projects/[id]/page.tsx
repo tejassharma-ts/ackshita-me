@@ -1,6 +1,13 @@
 "use client";
 
 import { ReactNode } from "react";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 import { projects } from "@/data";
 import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
@@ -85,7 +92,7 @@ export default function AboutPage({ params }: AboutPageProps) {
       <Section>
         <Container className="">
           <div className="relative flex justify-center flex-col text-center">
-            {/* <p className="text-gray-400">Organization Name</p> */}
+            <p className="font-light text-lg mb-6">{project.service}</p>
             <AnimatePresence>
               <motion.h1
                 transition={{
@@ -156,15 +163,135 @@ export default function AboutPage({ params }: AboutPageProps) {
           {prefix ? (
             <ResponsiveMasonry columnsCountBreakPoints={{ 750: 2, 900: 3 }}>
               <Masonry gutter="1.5rem">
-                {Array.from({ length: 12 }).map((_, idx) => (
+                {Array.from({ length: project.imageCount! }).map((_, idx) => (
                   <img src={`/${prefix}-imgs/${prefix}-${idx + 1}.png`} />
                 ))}
               </Masonry>
             </ResponsiveMasonry>
-          ) : null}
+          ) : (
+            <LLMLayout />
+          )}
         </Section>
         <ProjectControls next={next} prev={prev} />
       </Section>
     </>
+  );
+}
+
+// TODO: need to create general layout
+function LLMLayout() {
+  const scrollImages = Array.from({ length: 7 }).map(
+    (_, idx) => `/llma/carousel/img-${idx + 1}.png`,
+  );
+  return (
+    <Section>
+      <Container className="flex flex-col items-center gap-16">
+        <div className="flex flex-col gap-16 items-center">
+          <h1 className="text-3xl font-semibold md:text-2xl md:text-left">
+            LLMA has always been political
+          </h1>
+          <Carousel
+            opts={{
+              align: "start",
+            }}
+            className="w-full">
+            <CarouselContent>
+              {scrollImages.map((src, index) => (
+                <CarouselItem key={index} className="">
+                  <div className="p-1">
+                    <div className="flex items-center justify-center">
+                      <img src={src} className="w-full h-fit" />
+                    </div>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="bg-black/40 left-0 border-none h-14 rounded-md hover:bg-black/40 hover:text-white disabled:opacity-0" />
+            <CarouselNext className="bg-black/40 right-0 border-none h-14 rounded-md hover:bg-black/40 hover:text-white disabled:opacity-0" />
+          </Carousel>
+
+          <div className="flex md:flex-col gap-4">
+            <h1 className="text-3xl max-w-lg leading-[1.5] md:max-w-full md:text-2xl">
+              THE MUSEUM'S POLITICAL ENGAGEMENT AND PERCEPTIVENESS HAVE BEEN ITS GREATEST STRENGTH
+              AND ENSURED ITS CONTINUED RELEVANCE.
+            </h1>
+            <div className="w-full">
+              <img src="/llma/architecture.png" className="w-full h-full object-cover" />
+            </div>
+          </div>
+        </div>
+
+        <div className="flex flex-col gap-16 items-center">
+          <h1 className="text-3xl font-semibold text-center md:text-2xl md:text-left">
+            The Museum’s STRUGGLE TO SIGNIFY YOUR CURRENT POLITICAL BELIEFS AND DILUTION IS LEADING
+            TO A LACK OF DEFINITION.
+          </h1>
+
+          <div className="flex gap-48 md:flex-col md:gap-10">
+            <div className="flex flex-col gap-4">
+              <img src="/llma/forbes-stat-1.png" className="w-full h-full" />
+              <img src="/llma/forbes-stat-2.png" className="w-full h-full" />
+            </div>
+            <div className="flex items-center justify-center text-3xl text-center md:justify-start md:text-left">
+              <h1 className=" max-w-lg md:max-w-full">
+                The museums’s role more important now than ever
+              </h1>
+            </div>
+          </div>
+
+          <div className="flex md:flex-col md:gap-10 [&_img]:w-full [&_img]:h-full [&_img]:aspect-square md:[&_img]:aspect-auto [&_img]:object-contain">
+            <img src="/llma/news-1.png" />
+            <img src="/llma/news-2.png" />
+            <img src="/llma/news-3.png" />
+            <img src="/llma/news-4.png" />
+          </div>
+        </div>
+
+        <div className="flex flex-col gap-16 items-center">
+          <h1 className="text-3xl font-semibold text-center md:text-2xl md:text-left">
+            HOW CAN THE MUSEUM EXPRESS ITS EVOLVING POLITICAL CONTEXT WHILE ARTICULATING ITS
+            ENDURING ESSENCE?
+          </h1>
+
+          <div className="flex flex-col gap-6">
+            <div className="flex gap-4 md:flex-col">
+              <img src="/llma/museum-1.png" className="w-full h-full" />
+              <img src="/llma/museum-2.png" className="w-full h-full" />
+            </div>
+
+            <div className="flex gap-14 md:flex-col">
+              <div className="flex gap-4">
+                <img src="/llma/info-1.png" className="w-full h-full" />
+                <img src="/llma/info-2.png" className="w-full h-full" />
+                <img src="/llma/info-3.png" className="w-full h-full" />
+              </div>
+              <div className="flex items-center justify-center text-3xl text-left">
+                <h1 className=" max-w-xl">
+                  How would the museums actions, efforts look under this postioning statement?
+                </h1>
+              </div>
+            </div>
+
+            <div className="flex gap-4 md:flex-col">
+              <img src="/llma/museum-3.png" className="w-full h-full" />
+              <img src="/llma/museum-4.png" className="w-full h-full" />
+            </div>
+
+            <div className="flex gap-14 flex-row-reverse md:flex-col">
+              <div className="flex gap-4">
+                <img src="/llma/info-4.png" className="w-full h-full" />
+                <img src="/llma/info-5.png" className="w-full h-full" />
+                <img src="/llma/info-6.png" className="w-full h-full" />
+              </div>
+              <div className="flex items-center justify-center text-3xl text-left">
+                <h1 className=" max-w-xl">
+                  How would the museums actions, efforts look under this postioning statement?
+                </h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </Container>
+    </Section>
   );
 }

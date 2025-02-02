@@ -11,7 +11,7 @@ import {
 import Container from "../components/container";
 import HeroImageCard from "../components/hero-image-card";
 
-const images = ["/projects/amudhu-cover.png", "/projects/hy-veg.png", "/projects/tel-ganesan.jpg"];
+const images = ["/projects/amudhu-cover.png", "/projects/hy-veg.png", "/projects/tel-ganesan.jpg", "/projects/llma-cover.png"];
 
 export default function Hero() {
   const targetRef = useRef(null);

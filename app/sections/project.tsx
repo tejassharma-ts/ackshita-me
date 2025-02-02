@@ -92,14 +92,14 @@ const Panel = ({ open, setOpen, id, title, imgSrc, service }: PanelProps) => {
         />
         <div
           className={cn(
-            "scale-110 opacity-0 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 flex flex-col space-y-4 text-center duration-200",
+            "scale-110 opacity-0 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 flex flex-col space-y-4 text-center duration-200 w-full",
             isOpen && "transition-[transform_opacity] delay-700 opacity-100 scale-100",
           )}>
           <p className="font-semibold text-lg">{service}</p>
           <div className="relative">
             <motion.h1
               layoutId={`title-${id}`}
-              className="font-dx text-[clamp(3rem,10vw,10rem)] whitespace-nowrap">
+              className="font-dx text-[clamp(16px,10vw,10rem)] whitespace-nowrap">
               {title}
             </motion.h1>
             {isOpen ? <Link href={`/projects/${id}`} className="absolute inset-0" /> : null}

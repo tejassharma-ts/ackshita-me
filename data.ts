@@ -1,12 +1,25 @@
 export const projects = [
   {
     name: "LLMA",
-    mainImgSrc: "/project-sample.png",
+    mainImgSrc: "/projects/llma-cover.png",
     service: "Brand Strategy & Postioning",
     content: [
       {
         title: "Clients",
         content: "Leslie-Lohman Museum of Art",
+      },
+      {
+        title: "Team",
+        content: [
+          "Dan Azic, ",
+          "Ria Shah, ",
+          "Alvaro Bigaton, ",
+          "Jennifer Mahon, ",
+          "Alex Gilkey, ",
+          "Shrutika Manivannan, ",
+          "Yelle Rothman, ",
+          "Andrew Krantz",
+        ],
       },
       {
         title: "Context",
@@ -27,6 +40,7 @@ export const projects = [
     name: "Amudhu Snacks Co.",
     mainImgSrc: "/projects/amudhu-cover.png",
     clients: ["Amudhu Snacks Co."],
+    imageCount: 12,
     org: ["Sai Kirupa Special School"],
     projectType: "Logo Design",
     service: "Logo Design",
@@ -55,6 +69,7 @@ export const projects = [
     prefix: "hy-veg",
     name: "HyVeg",
     mainImgSrc: "/projects/hy-veg.png",
+    imageCount: 13,
     service: "Rebranding",
     content: [
       {
@@ -70,6 +85,29 @@ export const projects = [
         title: "Challenge",
         content:
           "How do we create a cohesive brand identity that captures their vision accurately?",
+      },
+    ],
+  },
+  {
+    prefix: "tel",
+    clients: ["Tel Ganesan"],
+    name: "Tel Ganesan",
+    imageCount: 6,
+    mainImgSrc: "/projects/tel-ganesan.jpg",
+    service: "Personal Brand - Social media",
+    content: [
+      {
+        title: "Clients",
+        content: "Tel Ganesan",
+      },
+      {
+        title: "Context",
+        content:
+          "Tel Ganesan is a serial entrepreneur, film producer, philanthropist, and investor. Committed to helping the communities that uplift him in both Michigan and India, he sought to create a personal brand for his social media platforms that reflects his dedication to empowering others and investing in transformative ideas.",
+      },
+      {
+        title: "Challenge",
+        content: "How do we create a bold personal identity that captures his personality?",
       },
     ],
   },

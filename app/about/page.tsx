@@ -236,7 +236,7 @@ export default function AboutPage() {
             <Accordion type="single" collapsible className="w-full mt-8">
               <AccordionItem value="item-1" className="border-white/50">
                 <AccordionTrigger className="py-8">
-                  <span className="size-12 rounded-full border-2 bg-transparent shrink-0">
+                  <span className="size-12 rounded-full bg-transparent shrink-0">
                     <img src="/services/service-1.png" className="h-full w-full" />
                   </span>
                   <span className="mr-auto text-3xl ml-8 sm:text-2xl">BRAND STRATEGY</span>
@@ -261,7 +261,7 @@ export default function AboutPage() {
 
               <AccordionItem value="item-2" className="border-white/50">
                 <AccordionTrigger className="py-8">
-                  <span className="size-12 rounded-full border-2 bg-transparent shrink-0">
+                  <span className="size-12 rounded-full bg-transparent shrink-0">
                     <img src="/services/service-2.png" className="h-full w-full" />
                   </span>
                   <span className="mr-auto text-3xl ml-8 sm:text-2xl">BRAND IDENTITY DESIGN</span>

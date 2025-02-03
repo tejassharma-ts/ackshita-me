@@ -241,17 +241,21 @@ function LLMLayout() {
 
           <div className="flex md:flex-col md:gap-10 [&_img]:w-full [&_img]:h-full [&_img]:aspect-square md:[&_img]:aspect-auto [&_img]:object-contain">
             {/* Creating f**ing div wrapper for img because of chrome (images get overflowed won't shrink their size even it is a children of flex*/}
-            <div>
+            <div className="relative">
               <img src="/llma/news-1.png" />
+              <a href="https://www.vice.com/en/article/republicans-drag-show-ban-tennessee/" className="absolute inset-0"/>
             </div>
-            <div>
+            <div className="relative">
               <img src="/llma/news-2.png" />
+              <a href="https://www.hrc.org/press-releases/human-rights-campaign-slams-governor-lee-for-signing-anti-drag-bill-and-gender-affirming-care-ban-into-law-tn-becomes-first-state-to-criminalize-drag" className="absolute inset-0"/>
             </div>
-            <div>
+            <div className="relative">
               <img src="/llma/news-3.png" />
+              <a href="https://www.them.us/story/anti-drag-attacks-2022-glaad" className="absolute inset-0"/>
             </div>
-            <div>
+            <div className="relative">
               <img src="/llma/news-4.png" />
+              <a href="https://www.rollingstone.com/music/music-news/bonnaroo-statement-tennessee-anti-drag-law-1234690594/" className="absolute inset-0"/>
             </div>
           </div>
         </div>

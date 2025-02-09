@@ -1,5 +1,6 @@
 export const projects = [
   {
+    prefix: "llma",
     name: "LLMA",
     mainImgSrc: "/projects/llma-cover.png",
     service: "Brand Strategy & Postioning",

@@ -42,6 +42,7 @@ const VerticalAccordion = () => {
               title={project.name}
               service={project.service}
               imgSrc={project.mainImgSrc}
+              prefix={project.prefix}
             />
           );
         })}
@@ -57,15 +58,16 @@ interface PanelProps {
   title: string;
   imgSrc: string;
   service: string;
+  prefix: string; // same will be the filename
 }
 
-const Panel = ({ open, setOpen, id, title, imgSrc, service }: PanelProps) => {
+const Panel = ({ open, setOpen, id, title, imgSrc, service, prefix }: PanelProps) => {
   const isOpen = open === id;
 
   return (
     <>
       <motion.div
-        layoutId={`project-${id}`}
+        layoutId={`project-${title}`}
         style={{
           backgroundImage: `url(${imgSrc})`,
           // filter: isOpen ? "grayscale(100%)" : "",
@@ -98,11 +100,11 @@ const Panel = ({ open, setOpen, id, title, imgSrc, service }: PanelProps) => {
           <p className="font-semibold text-lg">{service}</p>
           <div className="relative">
             <motion.h1
-              layoutId={`title-${id}`}
+              layoutId={title}
               className="font-dx text-[clamp(16px,10vw,10rem)] whitespace-nowrap">
               {title}
             </motion.h1>
-            {isOpen ? <Link href={`/projects/${id}`} className="absolute inset-0" /> : null}
+            {isOpen ? <Link href={`/projects/${prefix}`} className="absolute inset-0" /> : null}
           </div>
         </div>
       </motion.div>

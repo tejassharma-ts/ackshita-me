@@ -130,8 +130,9 @@ export default function AboutPage() {
           <div className="flex gap-8">
             <div className="relative">
               <h1 className="text-[10rem] md:text-[5rem] sm:text-[4.7rem] font-dx whitespace-nowrap">
-                YOUR FAVOURITE <br />
-                BRAND DESIGNER
+                BUILDING BRANDS
+                <br />
+                thoughtfully
               </h1>
               <p className="mt-8 max-w-md">
                 <span className="text-muted-foreground">I AM A </span> BRAND STRATEGIST{" "}
@@ -250,6 +251,10 @@ export default function AboutPage() {
                     </h3>
                   ))}
                   <h3 className="font-bold underline mt-8">Defining the brand</h3>
+                  <p>
+                    Based on the research conducted, requirements, and the goals of the brand, I
+                    help the brand define the following.
+                  </p>
                   {brandCoreAttributes.map((item, index) => (
                     <h3 key={index} className="font-bold">
                       {item.title} -{" "}

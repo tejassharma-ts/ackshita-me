@@ -108,11 +108,11 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({ name, title, content:
 
   return (
     <div className={`flex flex-col p-8 max-w-2xl text-2xl bg bg-[#01069E] sm:text-base`}>
-      <div className="flex flex-col space-y-2 sm:mb-4">
-        <h1 className="text-4xl font-medium sm:text-3xl">{name}</h1>
-        <p className="font-medium">{title}</p>
+      <div className="flex flex-col space-y-2 sm:mb-4 mb-8">
+        <h1 className="text-4xl font-medium sm:text-3xl uppercase">{name}</h1>
+        <p className="text-xl font-light">{title}</p>
       </div>
-      <p>{description}</p>
+      <p className="text-xl">"{description}"</p>
       {/* {typeof description === "string" ? ( */}
       {/*   <p> */}
       {/*     {isReadMore ? description.slice(0, 150).concat("...") : description} */}

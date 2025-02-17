@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import LenisProvider from "./providers/smooth-scroll";
@@ -32,7 +33,9 @@ export default function RootLayout({
       className={`${dx.variable} ${dx.variable} ${fontSans.variable} ${fontSans.className} antialiased scrollbar-hide`}>
       <body>
         <Navbar />
-        <LenisProvider>{children}</LenisProvider>
+        <Suspense fallback={null}>
+          <LenisProvider>{children}</LenisProvider>
+        </Suspense>
         <Toaster
           toastOptions={{
             style: {},

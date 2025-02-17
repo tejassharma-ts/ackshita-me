@@ -8,6 +8,7 @@ const containerVariants = cva("mx-auto px-6", {
       full: "max-w-[1600px]",
       md: "max-w-[800px]",
       sm: "max-w-8xl",
+      max: "max-w-full px-4"
     },
   },
   defaultVariants: {
@@ -17,7 +18,7 @@ const containerVariants = cva("mx-auto px-6", {
 
 interface ContainerProps extends React.HTMLAttributes<HTMLDivElement> {
   className?: string;
-  size?: "default" | "full" | "md" | "sm";
+  size?: "default" | "full" | "md" | "sm" | "max";
 }
 
 export default function Container({ className, size, ...props }: ContainerProps) {

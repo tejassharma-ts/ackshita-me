@@ -24,7 +24,7 @@ export default function Hero() {
   const fadeIn = useTransform(scrollYProgress, [0.5, 1], [0, 1]);
 
   return (
-    <Container size="full">
+    <Container size="max">
       <section ref={targetRef} className="relative flex gap-16 md:h-[200vh]">
         <div className="relative flex flex-col basis-full md:hidden">
           {images.map((img, idx) => (

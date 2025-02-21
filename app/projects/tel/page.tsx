@@ -19,7 +19,7 @@ export default function Page() {
 function TelLayout() {
   return (
     <div className="flex flex-col gap-14 md:gap-6">
-      <div className="grid grid-cols-[.4fr_1fr] gap-14 lg:grid-cols-1">
+      <div className="grid grid-cols-[.4fr_1fr] gap-14 lg:flex lg:flex-col">
         <h1 className="text-3xl">Developed design assets that embody his bold spirit</h1>
         <div className="h-full w-full">
           <img src="/tel-imgs/tel-palatte.png" className="h-full w-full" />

@@ -52,41 +52,41 @@ function HyVegLayout() {
         </h1>
       </div>
 
-      <div className="grid grid-cols-[1fr_.6fr] gap-6 md:gap-6 ">
-        <div className="h-full w-full">
+      <div className="flex gap-6 md:gap-6 ">
+        <div className="">
           <img src="/hy-veg-imgs/product.png" className="h-full w-full" />
         </div>
-        <div className="h-full w-full">
+        <div className="">
           <img src="/hy-veg-imgs/grid.png" className="h-full w-full" />
         </div>
       </div>
 
-      <div className="grid grid-cols-[1fr_.8fr] gap-6 md:gap-6">
-        <div className="h-full w-full">
+      <div className="flex gap-6 md:gap-6">
+        <div className="w-[55.5%]">
           <img src="/hy-veg-imgs/growing-seed.png" className="h-full w-full" />
         </div>
-        <div className="h-full w-full">
+        <div className="w-[44.5%]">
           <img src="/hy-veg-imgs/on-packet.png" className="h-full w-full" />
         </div>
       </div>
 
-      <div className="grid grid-cols-[.8fr_1fr_1fr] gap-6 md:gap-6">
-        <div className="h-full w-full">
+      <div className="flex gap-6 md:gap-6">
+        <div className="w-[28.5%]">
           <img src="/hy-veg-imgs/sweet-corn.png" className="h-full w-full" />
         </div>
-        <div className="h-full w-full">
+        <div className="w-[35.75%]">
           <img src="/hy-veg-imgs/chetna.png" className="h-full w-full" />
         </div>
-        <div className="h-full w-full">
+        <div className="w-[35.75%]">
           <img src="/hy-veg-imgs/board.png" className="h-full w-full" />
         </div>
       </div>
 
-      <div className="grid grid-cols-2 gap-6 md:gap-6">
-        <div className="h-full w-full">
+      <div className="flex gap-6 md:gap-6">
+        <div className="w-1/2">
           <img src="/hy-veg-imgs/homepage.png" className="h-full w-full" />
         </div>
-        <div className="h-full w-full">
+        <div className="w-1/2">
           <img src="/hy-veg-imgs/insta-post.png" className="h-full w-full" />
         </div>
       </div>

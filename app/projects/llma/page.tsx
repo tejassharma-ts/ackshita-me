@@ -42,7 +42,7 @@ function LLMLayout() {
               {scrollImages.map((src, index) => (
                 <CarouselItem key={index}>
                   <div className="p-1">
-                    <img src={src} className="w-full h-fit" />
+                    <img src={src} className="w-full h-full min-h-fit" />
                   </div>
                 </CarouselItem>
               ))}

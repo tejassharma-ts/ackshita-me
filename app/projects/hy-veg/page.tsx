@@ -19,7 +19,7 @@ export default function Page() {
 function HyVegLayout() {
   return (
     <div className="flex flex-col gap-6 md:gap-6">
-      <div className="grid grid-cols-[.4fr_1fr] gap-6 lg:grid-cols-1">
+      <div className="grid grid-cols-[.4fr_1fr] gap-6 lg:grid-cols-1 lg:flex lg:flex-col">
         <h1 className="text-3xl">
           leveraged their distinctive color palette, setting them apart from competitors in the
           category, to craft a brand language that feels both vibrant and evocative
@@ -43,7 +43,7 @@ function HyVegLayout() {
         </div>
       </div>
 
-      <div className="grid grid-cols-[1fr_.3fr] gap-6 md:gap-6 lg:grid-cols-1">
+      <div className="grid grid-cols-[1fr_.3fr] gap-6 md:gap-6 lg:grid-cols-1 lg:flex lg:flex-col">
         <div className="h-full w-full">
           <img src="/hy-veg-imgs/components.png" className="h-full w-full" />
         </div>

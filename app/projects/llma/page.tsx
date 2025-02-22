@@ -29,19 +29,15 @@ function LLMLayout() {
   return (
     <Section>
       <Container className="flex flex-col items-center gap-16">
-        <div className="flex flex-col gap-16 items-center">
-          <h1 className="text-3xl font-semibold md:text-2xl md:text-left">
+        <div className="space-y-8">
+          <h1 className="text-3xl font-semibold md:text-2xl md:text-left text-center">
             LLMA has always been political
           </h1>
-          <Carousel
-            opts={{
-              align: "start",
-            }}
-            className="w-full">
+          <Carousel>
             <CarouselContent>
               {scrollImages.map((src, index) => (
-                <CarouselItem key={index} className="w-full h-full">
-                  <img src={src} className="w-full min-h-fit" />
+                <CarouselItem key={index}>
+                  <img src={src} className="w-full h-full" />
                 </CarouselItem>
               ))}
             </CarouselContent>

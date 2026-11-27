@@ -2,7 +2,7 @@
 
 A portfolio website for a brand strategist, built with **Next.js 14**, **TypeScript**, **Tailwind CSS** and **Framer Motion**. It showcases brand-strategy case studies, each with its own page covering the client, team and work. All project content lives in `data.ts`, so adding a case study doesn't need any layout changes.
 
-**Live:** https://ackshita-me.vercel.app
+![Portfolio home page: "Building brands thoughtfully" hero with a portrait](.github/preview.jpg)
 
 ## Run locally
 
